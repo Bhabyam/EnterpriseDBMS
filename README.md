@@ -174,14 +174,35 @@ project/
 ├── schema.sql          # schema definition for tables
 ├── roles.sql           # role creation and permission configuration
 ├── policies.sql        # row level security policies
+├── images/             # images for visualizing of database 
+│   ├── EnterpriseDBMS.drawio
+│   ├── EnterpriseDBMS.drawio.pdf
+│   ├── EnterpriseDBMS_relation.jpeg
+│   └── EnterpriseDBMS_relational.pdf
 │
 ├── data/               # CSV datasets used to populate tables
-│   ├── products.csv
-│   ├── users.csv
+│   ├── accomodates.csv
+│   ├── branches.csv
+│   ├── brands.csv
+│   ├── categories.csv
+│   ├── customers.csv
+│   ├── employees.csv
+│   ├── expenses.csv
+│   ├── order_items.csv
 │   ├── orders.csv
 │   ├── payments.csv
-│   ├── accomodates.csv
-│   └── stock_movements.csv
+│   ├── products.csv
+│   ├── purchase_items.csv
+│   ├── purchase_orders.csv
+│   ├── return_items.csv
+│   ├── return_orders.csv
+│   ├── roles.csv
+│   ├── stock_movements.csv
+│   ├── suppliers.csv
+│   ├── supplies.csv
+│   ├── units.csv
+│   ├── user_sessions.csv
+│   └── users.csv
 │
 └── README.md
 ```
