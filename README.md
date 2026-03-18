@@ -170,39 +170,96 @@ For example:
 ```
 project/
 │
-├── retail_db.tar       # complete PostgreSQL database dump
-├── schema.sql          # schema definition for tables
-├── roles.sql           # role creation and permission configuration
-├── policies.sql        # row level security policies
-├── images/             # images for visualizing of database 
-│   ├── EnterpriseDBMS.drawio
-│   ├── EnterpriseDBMS.drawio.pdf
-│   ├── EnterpriseDBMS_relation.jpeg
-│   └── EnterpriseDBMS_relational.pdf
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   │
+│   │   ├── routes/
+│   │   │   ├── auth.py
+│   │   │   ├── orders.py
+│   │   │   ├── inventory.py
+│   │   │   └── payments.py
+│   │   │
+│   │   ├── services/
+│   │   │   ├── auth_service.py
+│   │   │   ├── order_service.py
+│   │   │   └── inventory_service.py
+│   │   │
+│   │   ├── db/
+│   │   │   └── connection.py
+│   │   │
+│   │   └── utils/
+│   │       └── auth_utils.py
+│   │
+│   ├── run.py
+│   ├── requirements.txt
+│   └── .env
 │
-├── data/               # CSV datasets used to populate tables
-│   ├── accomodates.csv
-│   ├── branches.csv
-│   ├── brands.csv
-│   ├── categories.csv
-│   ├── customers.csv
-│   ├── employees.csv
-│   ├── expenses.csv
-│   ├── order_items.csv
-│   ├── orders.csv
-│   ├── payments.csv
-│   ├── products.csv
-│   ├── purchase_items.csv
-│   ├── purchase_orders.csv
-│   ├── return_items.csv
-│   ├── return_orders.csv
-│   ├── roles.csv
-│   ├── stock_movements.csv
-│   ├── suppliers.csv
-│   ├── supplies.csv
-│   ├── units.csv
-│   ├── user_sessions.csv
-│   └── users.csv
+├── frontend/
+│   ├── public/
+│   │
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Table.jsx
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Login.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Orders.jsx
+│   │   │   ├── Inventory.jsx
+│   │   │   └── Payments.jsx
+│   │   │
+│   │   ├── services/
+│   │   │   ├── api.js
+│   │   │   ├── authService.js
+│   │   │   ├── orderService.js
+│   │   │
+│   │   ├── context/
+│   │   │   └── AuthContext.jsx
+│   │   │
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── package.json
+│   └── vite.config.js
+│
+├── database/
+│   ├── retail_db.tar          
+│   ├── schema.sql
+│   ├── roles.sql
+│   ├── policies.sql
+│   │
+│   ├── images/
+│   │   ├── EnterpriseDBMS.drawio
+│   │   ├── EnterpriseDBMS.drawio.pdf
+│   │   ├── EnterpriseDBMS_relation.jpeg
+│   │   └── EnterpriseDBMS_relational.pdf
+│   │
+│   ├── data/
+│   │   ├── accomodates.csv
+│   │   ├── branches.csv
+│   │   ├── brands.csv
+│   │   ├── categories.csv
+│   │   ├── customers.csv
+│   │   ├── employees.csv
+│   │   ├── expenses.csv
+│   │   ├── order_items.csv
+│   │   ├── orders.csv
+│   │   ├── payments.csv
+│   │   ├── products.csv
+│   │   ├── purchase_items.csv
+│   │   ├── purchase_orders.csv
+│   │   ├── return_items.csv
+│   │   ├── return_orders.csv
+│   │   ├── roles.csv
+│   │   ├── stock_movements.csv
+│   │   ├── suppliers.csv
+│   │   ├── supplies.csv
+│   │   ├── units.csv
+│   │   ├── user_sessions.csv
+│   │   └── users.csv
 │
 └── README.md
 ```
