@@ -1,0 +1,481 @@
+first_name,last_name,position,phone,email,salary,branch_id
+Michael,Burke,Security Staff,2417374283,michael.burke149@company.com,42055,1
+Lee,Sosa,HR Executive,7772873299,lee.sosa559@company.com,56026,1
+Gavin,Curtis,Assistant Manager,3258918517,gavin.curtis149@company.com,68576,1
+Randy,Allen,Inventory Supervisor,2307184891,randy.allen62@company.com,87562,1
+James,Owens,Warehouse Staff,2012383616,james.owens162@company.com,58669,1
+Victoria,Franklin,Sales Executive,4714642777,victoria.franklin416@company.com,56262,1
+Stephanie,Rodriguez,Security Staff,8934518837,stephanie.rodriguez173@company.com,22350,1
+Kevin,Maynard,Inventory Supervisor,9556717574,kevin.maynard383@company.com,77070,1
+Gloria,Jones,HR Executive,2174006968,gloria.jones916@company.com,20472,1
+Jerry,Hayes,Accountant,1311209735,jerry.hayes461@company.com,86695,1
+Katie,Edwards,Store Manager,8223407012,katie.edwards532@company.com,41146,1
+Jennifer,Barber,Inventory Supervisor,1999034630,jennifer.barber457@company.com,76529,1
+Megan,Williams,Security Staff,2155756576,megan.williams340@company.com,21792,1
+Ashley,Lucero,HR Executive,7596876158,ashley.lucero191@company.com,43047,1
+Crystal,King,Inventory Supervisor,3054619460,crystal.king161@company.com,26693,1
+Kevin,Williams,Inventory Supervisor,8707947791,kevin.williams217@company.com,32832,1
+Nicholas,Simpson,Assistant Manager,221476170,nicholas.simpson975@company.com,83640,1
+David,Orr,Customer Support,2343785657,david.orr302@company.com,83614,1
+Brian,Brown,Accountant,8158180570,brian.brown555@company.com,28543,1
+Kathleen,Lawson,Customer Support,6930274684,kathleen.lawson334@company.com,82517,1
+Nicholas,Jacobs,Cashier,5924850078,nicholas.jacobs776@company.com,68862,1
+Steven,Miller,Assistant Manager,1152681938,steven.miller117@company.com,48586,1
+Sarah,Myers,HR Executive,6277816229,sarah.myers654@company.com,81518,1
+Michael,Bell,Inventory Supervisor,8894553973,michael.bell45@company.com,33444,1
+Bradley,Shepherd,Accountant,8490530458,bradley.shepherd953@company.com,22467,1
+Zachary,Hardin,Inventory Supervisor,4213641942,zachary.hardin713@company.com,43532,1
+Douglas,Freeman,HR Executive,7359915445,douglas.freeman303@company.com,41337,1
+Jacqueline,Huerta,Cashier,179018842,jacqueline.huerta55@company.com,81135,1
+Dylan,Wilson,Store Manager,1278912815,dylan.wilson483@company.com,51010,1
+Ashley,Martin,Sales Executive,570492087,ashley.martin519@company.com,73191,1
+Kim,Guerrero,Sales Executive,6540570104,kim.guerrero209@company.com,31999,1
+Kelly,Norton,Assistant Manager,5760686300,kelly.norton8@company.com,42286,1
+Eric,Robinson,Warehouse Staff,6367674421,eric.robinson490@company.com,74015,1
+Joseph,Kennedy,Sales Executive,8737208460,joseph.kennedy83@company.com,60940,1
+Miguel,Gentry,Customer Support,7631542127,miguel.gentry91@company.com,56856,1
+Joseph,Rich,Cashier,6652528727,joseph.rich267@company.com,56333,1
+Johnathan,Thompson,HR Executive,2864218267,johnathan.thompson759@company.com,46127,1
+Gerald,Robertson,Inventory Supervisor,2521975935,gerald.robertson412@company.com,82960,1
+Samantha,Palmer,Cashier,8531993552,samantha.palmer282@company.com,73806,1
+Blake,Diaz,Warehouse Staff,316714204,blake.diaz965@company.com,49664,1
+Angela,Smith,Inventory Supervisor,2765013445,angela.smith72@company.com,67297,1
+Crystal,Riley,Warehouse Staff,2854135567,crystal.riley826@company.com,38011,1
+Erica,King,Customer Support,8382407908,erica.king525@company.com,66129,1
+Betty,Farrell,Cashier,9636654944,betty.farrell569@company.com,83446,1
+James,Harrington,Accountant,2491665643,james.harrington923@company.com,67474,1
+Ryan,Robbins,Customer Support,1601281900,ryan.robbins319@company.com,71303,2
+Hannah,Welch,HR Executive,394698867,hannah.welch754@company.com,85488,2
+Jason,Sanchez,Assistant Manager,3870501513,jason.sanchez698@company.com,83601,2
+Lisa,Avery,Store Manager,911729722,lisa.avery31@company.com,62178,2
+Jose,Knight,Cashier,7883538996,jose.knight402@company.com,55154,2
+Joshua,Rivas,Sales Executive,9733464745,joshua.rivas980@company.com,34860,2
+Heather,Kennedy,Sales Executive,6937686536,heather.kennedy581@company.com,63411,2
+Jonathan,Taylor,HR Executive,222499695,jonathan.taylor55@company.com,71453,2
+Justin,Greene,Sales Executive,7760596178,justin.greene325@company.com,48502,2
+Tiffany,Davis,Customer Support,4210315268,tiffany.davis776@company.com,19851,2
+Joshua,Stephenson,Security Staff,3897959390,joshua.stephenson891@company.com,52834,2
+Calvin,Woods,Assistant Manager,1104796434,calvin.woods148@company.com,21655,2
+Caitlyn,Reed,Warehouse Staff,1120946851,caitlyn.reed27@company.com,40629,2
+Lori,Richards,Warehouse Staff,8920167995,lori.richards849@company.com,23241,2
+Phillip,Perez,Security Staff,1518929027,phillip.perez84@company.com,41037,2
+Patricia,Lynch,HR Executive,5395447390,patricia.lynch662@company.com,18385,2
+Karen,Martin,HR Executive,405595218,karen.martin194@company.com,25151,2
+Natalie,Blake,Store Manager,6184620970,natalie.blake554@company.com,61796,2
+Tracy,Peck,Assistant Manager,6388820062,tracy.peck257@company.com,89827,2
+John,Fuller,Sales Executive,8577153933,john.fuller547@company.com,89653,2
+Kelly,Perez,Store Manager,9412364533,kelly.perez560@company.com,42237,2
+Debra,Williams,Security Staff,5651909101,debra.williams327@company.com,31663,2
+Willie,Gomez,Security Staff,2287927806,willie.gomez672@company.com,48198,2
+Jerry,Martin,Assistant Manager,498498792,jerry.martin211@company.com,30528,2
+James,Bowman,Inventory Supervisor,7282285064,james.bowman36@company.com,69662,2
+Stephanie,Johnson,Cashier,6835054347,stephanie.johnson325@company.com,41724,2
+Michael,Watson,Store Manager,3199623439,michael.watson109@company.com,50967,2
+Teresa,Smith,Warehouse Staff,4520728329,teresa.smith506@company.com,63812,2
+Maria,Snyder,Warehouse Staff,498796147,maria.snyder641@company.com,87163,2
+David,Li,Inventory Supervisor,824643944,david.li361@company.com,24274,2
+Lynn,Hunter,Accountant,1229422775,lynn.hunter575@company.com,73939,2
+Kathryn,Goodwin,Cashier,8560229628,kathryn.goodwin309@company.com,58623,2
+Steven,Webb,Sales Executive,5591427893,steven.webb614@company.com,52044,2
+Anne,Murray,Inventory Supervisor,6944302756,anne.murray106@company.com,74590,2
+Nicole,Nelson,HR Executive,3162209748,nicole.nelson643@company.com,86045,2
+Brooke,Robinson,HR Executive,7304464697,brooke.robinson562@company.com,68689,2
+Ronald,Olson,Customer Support,1651817579,ronald.olson892@company.com,69240,2
+Elizabeth,Chen,Store Manager,8895738769,elizabeth.chen829@company.com,55167,2
+Charles,Wright,Security Staff,5618246682,charles.wright426@company.com,47094,2
+Krystal,Carpenter,Assistant Manager,8060021102,krystal.carpenter761@company.com,56660,2
+Bridget,Anderson,Inventory Supervisor,40135909,bridget.anderson334@company.com,29548,2
+Elizabeth,Dougherty,Store Manager,1275182817,elizabeth.dougherty729@company.com,84396,2
+Robin,Brandt,Accountant,6653634514,robin.brandt802@company.com,26229,2
+Amanda,Harper,HR Executive,399788195,amanda.harper214@company.com,82710,3
+Samuel,Webb,Accountant,5758242307,samuel.webb525@company.com,88123,3
+Daniel,Murray,Inventory Supervisor,9879388372,daniel.murray653@company.com,30705,3
+Thomas,Singh,Customer Support,8468337234,thomas.singh672@company.com,49504,3
+Michele,Lawrence,Cashier,4982494909,michele.lawrence706@company.com,43748,3
+Bruce,Griffith,Accountant,8256329114,bruce.griffith478@company.com,59171,3
+Tabitha,Washington,Warehouse Staff,9400719489,tabitha.washington435@company.com,71062,3
+Jodi,Carey,Inventory Supervisor,5585217558,jodi.carey375@company.com,51348,3
+Victor,Pearson,Inventory Supervisor,8849563545,victor.pearson808@company.com,61854,3
+Jose,Chambers,Cashier,7181028457,jose.chambers125@company.com,83652,3
+Catherine,Fischer,Sales Executive,1728232596,catherine.fischer279@company.com,84997,3
+Allison,Burke,Accountant,5901987366,allison.burke228@company.com,54285,3
+Jack,Hogan,HR Executive,3068834405,jack.hogan952@company.com,56571,3
+Steven,Sullivan,HR Executive,635990664,steven.sullivan365@company.com,25589,3
+John,Hayes,Inventory Supervisor,4748006955,john.hayes517@company.com,31030,3
+Robert,Freeman,Customer Support,2613444887,robert.freeman826@company.com,60512,3
+Joshua,Kidd,Accountant,2543316048,joshua.kidd107@company.com,79039,3
+Julie,Duarte,Inventory Supervisor,402161737,julie.duarte721@company.com,75571,3
+Amy,Ford,Sales Executive,2371053966,amy.ford761@company.com,37766,3
+Kimberly,West,Security Staff,2121931863,kimberly.west581@company.com,70688,3
+Larry,Burns,Accountant,48119116,larry.burns824@company.com,64177,3
+Suzanne,Rodriguez,Security Staff,2395425091,suzanne.rodriguez246@company.com,60176,3
+Ashley,Powell,Assistant Manager,1974329521,ashley.powell858@company.com,62278,3
+Stacy,Johnson,Customer Support,2746747624,stacy.johnson146@company.com,85263,3
+James,Stone,Sales Executive,979854786,james.stone937@company.com,84621,3
+Lee,Travis,Customer Support,9693979678,lee.travis818@company.com,26218,3
+Barbara,Robertson,Accountant,3598703658,barbara.robertson844@company.com,53982,3
+Kristin,Juarez,Warehouse Staff,7806156240,kristin.juarez790@company.com,18538,3
+Leonard,Stephens,Sales Executive,2511210419,leonard.stephens633@company.com,74271,3
+Joseph,Crane,Cashier,4848552911,joseph.crane353@company.com,25143,3
+Jeremy,Cooper,Accountant,9835303341,jeremy.cooper838@company.com,63533,3
+Adrian,Stevens,HR Executive,7137766509,adrian.stevens767@company.com,56978,3
+Cathy,Porter,Warehouse Staff,1418932091,cathy.porter393@company.com,72836,3
+Amy,Anthony,Store Manager,3904377207,amy.anthony653@company.com,67157,3
+Amy,Young,Warehouse Staff,783195476,amy.young431@company.com,18056,3
+Bradley,Anderson,Warehouse Staff,1150382799,bradley.anderson213@company.com,29910,3
+Tyler,Woodward,Store Manager,2793553642,tyler.woodward432@company.com,23121,3
+Cindy,Lopez,HR Executive,3110730328,cindy.lopez725@company.com,54006,3
+Julie,Ray,Accountant,6032769385,julie.ray178@company.com,26963,3
+Anthony,Mendoza,Inventory Supervisor,7330680758,anthony.mendoza488@company.com,62183,4
+Michael,Mcneil,Warehouse Staff,7053735928,michael.mcneil609@company.com,50138,4
+Gregory,Patel,Sales Executive,5126631907,gregory.patel38@company.com,68535,4
+Jacob,Harmon,Inventory Supervisor,8930977222,jacob.harmon828@company.com,63268,4
+Helen,Barnes,Inventory Supervisor,6470734215,helen.barnes737@company.com,30144,4
+Bradley,Powers,Warehouse Staff,7543011787,bradley.powers747@company.com,66207,4
+Luke,Hudson,HR Executive,9900171026,luke.hudson709@company.com,49760,4
+Monica,Smith,Accountant,7988328620,monica.smith670@company.com,45437,4
+Alyssa,Hogan,Sales Executive,6224658969,alyssa.hogan368@company.com,59082,4
+Karen,Huang,HR Executive,8422645758,karen.huang71@company.com,36385,4
+Elizabeth,Green,Security Staff,3190524944,elizabeth.green401@company.com,66054,4
+Kayla,Burgess,HR Executive,9694965635,kayla.burgess335@company.com,32993,4
+Nathan,Stanley,Store Manager,4478839095,nathan.stanley581@company.com,23028,4
+Craig,Quinn,Accountant,1013991625,craig.quinn794@company.com,38961,4
+Claire,Hart,Customer Support,1447550948,claire.hart90@company.com,60778,4
+Heidi,Lewis,Assistant Manager,1314552698,heidi.lewis520@company.com,61330,4
+Sharon,Williams,HR Executive,8270706934,sharon.williams560@company.com,43325,4
+Emily,Dawson,Security Staff,221398627,emily.dawson950@company.com,35325,4
+Jonathan,Webster,Customer Support,9724645039,jonathan.webster792@company.com,29114,4
+Kevin,Moore,Cashier,7807950779,kevin.moore276@company.com,67400,4
+Patricia,Johnson,Inventory Supervisor,4371492917,patricia.johnson435@company.com,19173,4
+Terri,Mitchell,Inventory Supervisor,2031637049,terri.mitchell72@company.com,22594,4
+Taylor,Diaz,Accountant,742283588,taylor.diaz690@company.com,50647,4
+Daniel,Lewis,Security Staff,78948972,daniel.lewis994@company.com,78886,4
+John,Brown,Accountant,6144509996,john.brown107@company.com,63220,4
+Karen,James,Sales Executive,994886762,karen.james922@company.com,30323,4
+Lauren,Stevenson,Customer Support,9872467467,lauren.stevenson133@company.com,70526,4
+Gary,Walsh,Warehouse Staff,6200164667,gary.walsh760@company.com,25236,4
+Lisa,Stewart,HR Executive,6050437761,lisa.stewart899@company.com,88057,4
+Katherine,Johnson,Warehouse Staff,7488175538,katherine.johnson161@company.com,61305,4
+Karen,Lewis,Customer Support,3367378077,karen.lewis877@company.com,76091,4
+James,Deleon,Customer Support,9879875610,james.deleon993@company.com,75486,4
+Morgan,Taylor,Cashier,5879104475,morgan.taylor781@company.com,54025,4
+Shelby,Walter,Inventory Supervisor,1049316666,shelby.walter260@company.com,59392,4
+Bonnie,Peters,Cashier,7528675348,bonnie.peters881@company.com,31266,4
+Jennifer,Nixon,Store Manager,540347968,jennifer.nixon444@company.com,33672,4
+Heather,Boyd,Sales Executive,6115957907,heather.boyd917@company.com,35730,4
+Larry,Wall,Assistant Manager,9670217165,larry.wall317@company.com,23953,4
+Frank,Howell,Assistant Manager,9845897407,frank.howell676@company.com,38250,4
+Yvonne,Weaver,Accountant,9704732694,yvonne.weaver759@company.com,70097,4
+Deborah,Brooks,Inventory Supervisor,4724799905,deborah.brooks85@company.com,47555,4
+Jeffrey,Cabrera,Security Staff,6274418725,jeffrey.cabrera464@company.com,70459,4
+James,Solis,Warehouse Staff,2559825914,james.solis36@company.com,50936,4
+Matthew,Ford,Store Manager,7444097410,matthew.ford725@company.com,30753,4
+Jennifer,Mullins,Cashier,6187148367,jennifer.mullins924@company.com,51983,4
+Ronald,Wang,Accountant,5956749735,ronald.wang674@company.com,66443,4
+Christy,Maxwell,Customer Support,8872765214,christy.maxwell225@company.com,46666,4
+Melissa,Gonzalez,Inventory Supervisor,9208372894,melissa.gonzalez293@company.com,41158,4
+Bryan,Booker,Cashier,8007625498,bryan.booker641@company.com,56235,4
+David,Foster,Customer Support,810383790,david.foster994@company.com,50015,4
+Andrew,Gray,Store Manager,280977125,andrew.gray611@company.com,27317,4
+Hayley,Jensen,Warehouse Staff,7752488736,hayley.jensen514@company.com,78854,5
+Gary,Humphrey,Inventory Supervisor,7882920023,gary.humphrey173@company.com,63900,5
+Priscilla,King,Security Staff,7335697566,priscilla.king991@company.com,26449,5
+Karen,Wheeler,Sales Executive,5237675227,karen.wheeler449@company.com,20993,5
+Adam,Townsend,Assistant Manager,3780899876,adam.townsend277@company.com,64729,5
+Amanda,Flores,Assistant Manager,9694998708,amanda.flores457@company.com,30329,5
+Justin,George,Accountant,7317245436,justin.george824@company.com,28358,5
+Nicholas,Fox,Security Staff,1556755953,nicholas.fox256@company.com,39252,5
+Shawna,Robertson,Assistant Manager,3819903734,shawna.robertson418@company.com,41136,5
+Richard,Obrien,Sales Executive,1624971113,richard.obrien906@company.com,50721,5
+Michael,Weaver,Inventory Supervisor,9574130914,michael.weaver709@company.com,37902,5
+Roberto,Johnson,Inventory Supervisor,2816410555,roberto.johnson854@company.com,76790,5
+Linda,Flores,Sales Executive,1014076065,linda.flores615@company.com,75413,5
+John,Rodriguez,Warehouse Staff,5876364144,john.rodriguez110@company.com,85647,5
+Keith,Cunningham,Cashier,1322693167,keith.cunningham290@company.com,86519,5
+Joshua,Salazar,Accountant,4428087,joshua.salazar28@company.com,38339,5
+Donald,Rodriguez,Customer Support,9192542504,donald.rodriguez126@company.com,42334,5
+Michelle,Byrd,Assistant Manager,1408320513,michelle.byrd116@company.com,53749,5
+Jennifer,Mendoza,Assistant Manager,3895950576,jennifer.mendoza833@company.com,35668,5
+Rhonda,Johnson,Sales Executive,8207024497,rhonda.johnson520@company.com,33432,5
+Martha,Davis,HR Executive,2911944506,martha.davis616@company.com,59329,5
+Dillon,Nguyen,Inventory Supervisor,7698942362,dillon.nguyen782@company.com,49024,5
+Heidi,Ortiz,Store Manager,7651007095,heidi.ortiz221@company.com,80508,5
+Yolanda,Fletcher,Customer Support,1443572683,yolanda.fletcher171@company.com,47569,5
+Christopher,White,Customer Support,5775882128,christopher.white179@company.com,56384,5
+Robert,Armstrong,Accountant,6041540790,robert.armstrong542@company.com,31077,5
+Sharon,Holland,Customer Support,2180176622,sharon.holland949@company.com,62418,5
+Anthony,Thompson,Cashier,3461579941,anthony.thompson397@company.com,44069,5
+Jesus,Moore,Security Staff,2257029098,jesus.moore723@company.com,69350,5
+Mary,Crawford,Store Manager,7378069131,mary.crawford873@company.com,35431,5
+Victoria,Phillips,Inventory Supervisor,1557700612,victoria.phillips96@company.com,30496,5
+Scott,Dodson,HR Executive,8327303925,scott.dodson600@company.com,85870,5
+Brooke,Townsend,Warehouse Staff,8080611377,brooke.townsend940@company.com,41469,5
+Dana,Garcia,Sales Executive,7097698501,dana.garcia433@company.com,32461,5
+Roger,Foster,HR Executive,1419217042,roger.foster6@company.com,42015,5
+Karen,Castillo,Customer Support,7072981257,karen.castillo415@company.com,63713,5
+Angela,Foster,Cashier,8546300687,angela.foster348@company.com,52330,5
+Susan,Ponce,HR Executive,1866850636,susan.ponce532@company.com,36608,5
+Ashley,Curtis,Cashier,9733219649,ashley.curtis352@company.com,71978,5
+Catherine,Mccall,Sales Executive,2357465671,catherine.mccall585@company.com,22331,5
+Kim,Patterson,HR Executive,1229422791,kim.patterson38@company.com,47869,5
+Juan,Morrison,Store Manager,401029307,juan.morrison596@company.com,75069,5
+Kimberly,Miller,Customer Support,163955978,kimberly.miller337@company.com,46562,5
+Carlos,Vasquez,Assistant Manager,2909655051,carlos.vasquez197@company.com,36900,5
+David,Hatfield,Sales Executive,4180171614,david.hatfield122@company.com,48978,5
+Cheryl,Cruz,Assistant Manager,4731847376,cheryl.cruz416@company.com,19085,5
+Kevin,Scott,Inventory Supervisor,7575973953,kevin.scott507@company.com,19604,5
+Jamie,Beard,Security Staff,8941421418,jamie.beard77@company.com,61721,5
+Robert,Johnson,Accountant,5939756089,robert.johnson965@company.com,34988,5
+Jose,Solis,HR Executive,4428530278,jose.solis787@company.com,35467,5
+Michael,Jacobs,Accountant,9077248747,michael.jacobs275@company.com,44422,5
+George,Stein,Warehouse Staff,1991690800,george.stein187@company.com,72885,5
+Joshua,Pierce,Store Manager,1057687765,joshua.pierce868@company.com,19571,5
+Crystal,Cherry,Warehouse Staff,7052979253,crystal.cherry95@company.com,19297,5
+Scott,Johnson,Assistant Manager,8085805839,scott.johnson652@company.com,61350,5
+Steve,Tran,Security Staff,8216735672,steve.tran549@company.com,84655,6
+Anthony,Scott,Cashier,5444007239,anthony.scott288@company.com,25041,6
+Felicia,Ray,Assistant Manager,5957105006,felicia.ray312@company.com,58855,6
+Jared,Coleman,HR Executive,7622025425,jared.coleman903@company.com,62568,6
+Tammy,Quinn,Warehouse Staff,3602704566,tammy.quinn35@company.com,89696,6
+Darius,Henry,Warehouse Staff,2715656316,darius.henry103@company.com,81792,6
+Ashley,Gonzalez,Cashier,4672743806,ashley.gonzalez507@company.com,29334,6
+Debra,Roy,Store Manager,3714133872,debra.roy142@company.com,81282,6
+Angelica,Rose,Store Manager,7254443715,angelica.rose937@company.com,66618,6
+Regina,Nelson,Assistant Manager,37592182,regina.nelson100@company.com,57185,6
+Nicholas,Crawford,Sales Executive,4825267589,nicholas.crawford833@company.com,66114,6
+Cory,Wagner,Cashier,1408409687,cory.wagner367@company.com,59340,6
+Joseph,Lopez,Cashier,3513315100,joseph.lopez209@company.com,52719,6
+Gary,Stephenson,Accountant,5146310330,gary.stephenson434@company.com,21330,6
+Shelby,Shepard,Security Staff,4762768117,shelby.shepard814@company.com,23894,6
+Barbara,Jones,Store Manager,8329624108,barbara.jones15@company.com,50804,6
+Todd,Russell,Inventory Supervisor,8974736717,todd.russell715@company.com,35975,6
+Pamela,Taylor,Customer Support,4155208095,pamela.taylor659@company.com,24822,6
+Anna,Perez,Assistant Manager,3208137319,anna.perez412@company.com,31155,6
+Corey,Henderson,Assistant Manager,4993896128,corey.henderson914@company.com,81562,6
+Laura,Newman,Cashier,6805821441,laura.newman775@company.com,44377,6
+Travis,Moore,Assistant Manager,9171194188,travis.moore299@company.com,56295,6
+Nathan,Day,Sales Executive,6683272699,nathan.day269@company.com,31395,6
+Carolyn,Olson,HR Executive,2849749128,carolyn.olson366@company.com,50555,6
+Steven,Zhang,Store Manager,7258591972,steven.zhang668@company.com,52832,6
+Adam,Quinn,Store Manager,246967569,adam.quinn100@company.com,84721,6
+Courtney,Meyer,Security Staff,6263082572,courtney.meyer38@company.com,89225,6
+Danielle,Serrano,Cashier,7776791186,danielle.serrano809@company.com,37503,6
+Gregory,Thompson,Sales Executive,5221681632,gregory.thompson311@company.com,67686,6
+Ashley,Coleman,Cashier,9304319386,ashley.coleman227@company.com,78859,6
+Francisco,Hopkins,Assistant Manager,2082534112,francisco.hopkins558@company.com,37167,6
+Sherri,Roberts,Assistant Manager,7509461301,sherri.roberts610@company.com,32622,6
+Cassandra,Torres,Store Manager,3673559248,cassandra.torres301@company.com,86035,6
+Natasha,Johnson,Security Staff,848735905,natasha.johnson395@company.com,33561,6
+Stephen,Williams,Security Staff,3716560081,stephen.williams54@company.com,29818,6
+Amy,Barnes,Store Manager,6887051357,amy.barnes10@company.com,24381,6
+Joseph,Melton,Accountant,4963498105,joseph.melton140@company.com,81039,6
+Elizabeth,Mclean,Warehouse Staff,143193527,elizabeth.mclean302@company.com,39180,6
+Katie,Davis,Store Manager,8634148091,katie.davis428@company.com,34778,6
+Brenda,Nelson,Accountant,2653924175,brenda.nelson688@company.com,49039,6
+Robert,Guerrero,Cashier,6785525162,robert.guerrero540@company.com,83524,6
+Keith,Smith,Security Staff,6192027852,keith.smith886@company.com,33921,6
+Tracy,Murray,Assistant Manager,2525007036,tracy.murray69@company.com,62000,6
+Ashley,Flynn,Customer Support,6221819552,ashley.flynn731@company.com,22808,6
+Justin,Hicks,Accountant,1122106298,justin.hicks432@company.com,66393,6
+Sarah,Robinson,Cashier,2442940932,sarah.robinson352@company.com,39560,6
+Isaiah,Perez,Customer Support,8473837525,isaiah.perez376@company.com,35158,6
+James,Kim,Sales Executive,3179535417,james.kim135@company.com,78515,6
+Cynthia,Armstrong,Sales Executive,18502941,cynthia.armstrong1@company.com,31101,6
+Jennifer,Valentine,Accountant,5800175585,jennifer.valentine118@company.com,74475,6
+Nicole,Young,Security Staff,8068510202,nicole.young562@company.com,78611,7
+Tiffany,Cameron,Cashier,3004214125,tiffany.cameron503@company.com,38997,7
+Derek,Powell,Warehouse Staff,1122935887,derek.powell650@company.com,67295,7
+Cody,Ryan,HR Executive,3316411909,cody.ryan661@company.com,88349,7
+Samuel,Keith,Assistant Manager,787407292,samuel.keith1@company.com,55456,7
+Christian,Anderson,Cashier,4914302022,christian.anderson569@company.com,19907,7
+Melissa,Mason,Store Manager,6159305175,melissa.mason899@company.com,51620,7
+Renee,Peterson,Store Manager,6674042546,renee.peterson871@company.com,61399,7
+Alexander,Carlson,HR Executive,7088437855,alexander.carlson270@company.com,80343,7
+Roy,Douglas,Cashier,8704080692,roy.douglas237@company.com,49141,7
+Michael,Powell,Inventory Supervisor,1533989338,michael.powell476@company.com,60191,7
+Eric,Andrews,Inventory Supervisor,76038761,eric.andrews387@company.com,88626,7
+Larry,Patterson,HR Executive,6354106232,larry.patterson189@company.com,75392,7
+Gregory,Powell,Security Staff,1497220646,gregory.powell943@company.com,30283,7
+Joshua,Ferguson,Warehouse Staff,3193375170,joshua.ferguson572@company.com,78846,7
+Dustin,Lee,Accountant,849040391,dustin.lee314@company.com,84791,7
+Stephen,Manning,Store Manager,6965129180,stephen.manning972@company.com,19039,7
+Nicole,Johnson,Sales Executive,9138148705,nicole.johnson380@company.com,84954,7
+Logan,Lewis,Inventory Supervisor,7824572852,logan.lewis506@company.com,18719,7
+Stephanie,Diaz,Accountant,8760568363,stephanie.diaz340@company.com,83025,7
+Jeffrey,Reyes,Assistant Manager,9648036109,jeffrey.reyes252@company.com,27279,7
+Mark,Barker,Inventory Supervisor,8741147036,mark.barker133@company.com,47728,7
+James,Wilkinson,Store Manager,8314895335,james.wilkinson953@company.com,23176,7
+Julie,Oliver,Inventory Supervisor,7174954977,julie.oliver570@company.com,80082,7
+Nicole,Mann,HR Executive,5985002460,nicole.mann812@company.com,68467,7
+Nicholas,Wood,Sales Executive,208708144,nicholas.wood473@company.com,79890,7
+Kristen,Ramirez,Warehouse Staff,5762670444,kristen.ramirez327@company.com,65758,7
+Erika,Galloway,Cashier,5261728133,erika.galloway281@company.com,43953,7
+James,Holmes,Inventory Supervisor,4085438763,james.holmes958@company.com,64848,7
+Amber,Bell,Cashier,7762008269,amber.bell156@company.com,30806,7
+Lisa,Martinez,Security Staff,2278346787,lisa.martinez389@company.com,85062,7
+Patrick,Ward,Warehouse Staff,7350018395,patrick.ward366@company.com,25673,7
+Joshua,Mckay,Accountant,7837241512,joshua.mckay207@company.com,35756,7
+Kevin,Norman,HR Executive,8210095039,kevin.norman313@company.com,76323,7
+Edward,Turner,Warehouse Staff,4888337201,edward.turner761@company.com,33431,7
+Amanda,Perez,Customer Support,1097878768,amanda.perez80@company.com,69540,7
+Robert,Nguyen,Warehouse Staff,709728546,robert.nguyen570@company.com,67955,7
+Heather,Lee,Assistant Manager,9185534138,heather.lee310@company.com,83010,7
+Mary,Hines,Assistant Manager,3289037458,mary.hines506@company.com,61649,8
+Tyler,Peterson,Security Staff,2501115080,tyler.peterson887@company.com,81041,8
+Laura,Anderson,Security Staff,2885653244,laura.anderson816@company.com,59718,8
+Samantha,Petty,Customer Support,808698559,samantha.petty574@company.com,40454,8
+Stephanie,Thomas,Security Staff,8288533734,stephanie.thomas166@company.com,74952,8
+George,Sherman,Accountant,7443978319,george.sherman224@company.com,77572,8
+Destiny,Smith,Sales Executive,4757809125,destiny.smith101@company.com,87068,8
+Curtis,Kelley,Inventory Supervisor,3316563699,curtis.kelley712@company.com,59730,8
+Jerry,Flores,Accountant,8207022327,jerry.flores586@company.com,59747,8
+Joel,Joseph,Warehouse Staff,4178142010,joel.joseph382@company.com,67827,8
+Christopher,Lee,Store Manager,7890177389,christopher.lee59@company.com,70401,8
+Claire,Tate,Cashier,6371409164,claire.tate782@company.com,52323,8
+Jacob,Sanders,Warehouse Staff,8105972522,jacob.sanders346@company.com,56552,8
+Maria,Shepard,Assistant Manager,9739771351,maria.shepard369@company.com,79015,8
+Debra,Lam,Assistant Manager,7436113851,debra.lam312@company.com,34675,8
+Erik,Ruiz,Accountant,6033200463,erik.ruiz232@company.com,70561,8
+Courtney,Lopez,Warehouse Staff,9841767068,courtney.lopez725@company.com,25870,8
+Terri,Armstrong,Accountant,155653074,terri.armstrong813@company.com,45372,8
+Cameron,Sanders,Assistant Manager,7221901736,cameron.sanders26@company.com,28531,8
+Javier,Lynn,Store Manager,1714037491,javier.lynn547@company.com,25243,8
+Kristin,Williams,Cashier,3127055452,kristin.williams909@company.com,80141,8
+Kevin,Farmer,Cashier,616174216,kevin.farmer483@company.com,37034,8
+Jill,Werner,Customer Support,8477681582,jill.werner478@company.com,87615,8
+Steven,Riley,Cashier,9918301687,steven.riley585@company.com,31801,8
+Samantha,Stanley,Assistant Manager,7396201966,samantha.stanley232@company.com,60073,8
+Gregory,Odonnell,Security Staff,324219842,gregory.odonnell218@company.com,66130,8
+Hannah,Medina,Warehouse Staff,5703329561,hannah.medina689@company.com,37613,8
+Jason,Simpson,Warehouse Staff,233853583,jason.simpson312@company.com,34013,8
+Reginald,Williams,Assistant Manager,220257178,reginald.williams128@company.com,62791,8
+Jose,Mann,Customer Support,9683142152,jose.mann91@company.com,34267,8
+Crystal,Pitts,HR Executive,2085557263,crystal.pitts958@company.com,76689,8
+Kimberly,Campbell,Security Staff,7338025576,kimberly.campbell185@company.com,75091,8
+Julie,Jones,Warehouse Staff,891030954,julie.jones850@company.com,88962,8
+Holly,Scott,Accountant,1918130553,holly.scott825@company.com,56459,8
+Erika,Cook,Sales Executive,2402530657,erika.cook666@company.com,82568,8
+Jason,Young,Sales Executive,2250810303,jason.young834@company.com,66734,8
+Tracy,Kirk,Security Staff,3349980950,tracy.kirk611@company.com,45855,8
+Edward,Campbell,Security Staff,654520759,edward.campbell558@company.com,29828,8
+Michael,Gomez,Security Staff,48485211,michael.gomez790@company.com,68167,8
+David,Gilmore,Cashier,7682504227,david.gilmore191@company.com,38491,8
+Frank,Harris,Store Manager,1832720705,frank.harris259@company.com,83666,8
+Felicia,Villa,Inventory Supervisor,8268759432,felicia.villa784@company.com,74188,8
+Courtney,Orr,Cashier,4084957318,courtney.orr392@company.com,59465,8
+Tracy,Martinez,HR Executive,5233992867,tracy.martinez965@company.com,74359,8
+Shelley,Clark,Sales Executive,3799492161,shelley.clark524@company.com,63842,8
+Elizabeth,Barker,Accountant,4580935194,elizabeth.barker545@company.com,65332,8
+Heather,Lara,HR Executive,1555598984,heather.lara844@company.com,88433,8
+Joseph,Walker,HR Executive,2583049167,joseph.walker569@company.com,83192,8
+Daniel,Morris,Sales Executive,1095742308,daniel.morris179@company.com,53976,8
+Jason,Ellis,Cashier,9760601436,jason.ellis684@company.com,75577,8
+Karen,Davis,Assistant Manager,1522529023,karen.davis137@company.com,87962,8
+Jody,Leblanc,Warehouse Staff,2567680112,jody.leblanc699@company.com,53007,8
+Christy,Galvan,Sales Executive,6410415510,christy.galvan681@company.com,45512,8
+Lauren,Nguyen,Sales Executive,7255405415,lauren.nguyen19@company.com,87225,8
+Amy,Stanley,HR Executive,3762846694,amy.stanley740@company.com,60957,8
+Andrew,Allen,Security Staff,5239244566,andrew.allen665@company.com,73383,8
+Stacey,Jones,Store Manager,7285344899,stacey.jones104@company.com,42459,8
+Samantha,Keith,Warehouse Staff,6255541911,samantha.keith737@company.com,30771,9
+Shelley,Sanders,Accountant,5626674777,shelley.sanders757@company.com,44149,9
+Candice,Herrera,Inventory Supervisor,7825683943,candice.herrera238@company.com,54735,9
+Brett,Hernandez,Inventory Supervisor,5931059748,brett.hernandez221@company.com,74049,9
+Sean,Carr,Sales Executive,685585771,sean.carr1@company.com,75544,9
+Tonya,Lawson,Sales Executive,8998509934,tonya.lawson914@company.com,58408,9
+Mandy,Bryan,Customer Support,6640469131,mandy.bryan752@company.com,51470,9
+George,Schmidt,HR Executive,103076605,george.schmidt784@company.com,58197,9
+Scott,Reese,HR Executive,5598006599,scott.reese831@company.com,51955,9
+Melissa,Graves,Inventory Supervisor,4312809941,melissa.graves126@company.com,34447,9
+Juan,Johnston,Warehouse Staff,5714576356,juan.johnston722@company.com,85398,9
+Amy,Patel,Inventory Supervisor,8160878708,amy.patel206@company.com,28094,9
+Melissa,Anderson,Warehouse Staff,5904134195,melissa.anderson49@company.com,68085,9
+Charles,Reed,Inventory Supervisor,1137787825,charles.reed893@company.com,20049,9
+Eileen,Martin,Warehouse Staff,2800126245,eileen.martin492@company.com,81350,9
+Robin,Brown,Warehouse Staff,7125497887,robin.brown392@company.com,74946,9
+Victoria,Pearson,Inventory Supervisor,6590855769,victoria.pearson539@company.com,42070,9
+Martha,Rodriguez,Cashier,7729656630,martha.rodriguez800@company.com,51439,9
+Cassandra,Johns,HR Executive,8126425635,cassandra.johns36@company.com,30848,9
+Susan,Carr,Security Staff,2945354167,susan.carr912@company.com,27890,9
+Ashley,Mann,Customer Support,8835614035,ashley.mann593@company.com,44327,9
+Christina,Hunter,Cashier,1184486008,christina.hunter914@company.com,31236,9
+Philip,Chaney,Customer Support,9959404571,philip.chaney680@company.com,72601,9
+Xavier,Thompson,Security Staff,1941039097,xavier.thompson290@company.com,22040,9
+Lauren,Powell,Accountant,8432077938,lauren.powell560@company.com,63537,9
+Zachary,Wang,Warehouse Staff,4710769161,zachary.wang532@company.com,72273,9
+Nicole,Garcia,Customer Support,7061492745,nicole.garcia426@company.com,31867,9
+Amanda,Ingram,Cashier,2537113387,amanda.ingram354@company.com,77754,9
+Alejandra,Watkins,Customer Support,3924441431,alejandra.watkins412@company.com,21300,9
+Timothy,Baker,Assistant Manager,1409406016,timothy.baker269@company.com,45707,9
+Nicole,Davis,Store Manager,6760272973,nicole.davis147@company.com,64123,9
+Ryan,Brown,Warehouse Staff,4355108421,ryan.brown399@company.com,75093,9
+Lisa,Ross,Cashier,4544996667,lisa.ross292@company.com,86366,9
+Jonathan,Hamilton,Inventory Supervisor,477923722,jonathan.hamilton595@company.com,87170,9
+Kevin,Jones,Inventory Supervisor,2353568398,kevin.jones932@company.com,78440,9
+Richard,Cook,Store Manager,128612995,richard.cook256@company.com,51792,9
+Emily,Thompson,Security Staff,1355395972,emily.thompson275@company.com,78255,9
+Mark,Henson,Inventory Supervisor,7323601879,mark.henson860@company.com,30228,9
+Lauren,Simmons,Inventory Supervisor,763148014,lauren.simmons470@company.com,69046,9
+Deborah,Ponce,Store Manager,7448869506,deborah.ponce156@company.com,47961,9
+Carrie,Martinez,Inventory Supervisor,1628514482,carrie.martinez444@company.com,35866,9
+Phillip,Foley,Assistant Manager,3639708362,phillip.foley157@company.com,51530,9
+Lisa,White,Cashier,8160839759,lisa.white811@company.com,22786,9
+Suzanne,Hendrix,Warehouse Staff,3502849146,suzanne.hendrix12@company.com,84200,9
+Dennis,Robinson,Inventory Supervisor,3141510252,dennis.robinson529@company.com,40748,9
+Lori,Moore,Inventory Supervisor,7054376649,lori.moore954@company.com,25269,9
+Debbie,Torres,HR Executive,3015759407,debbie.torres612@company.com,53316,9
+Lauren,Snyder,Sales Executive,7177182136,lauren.snyder394@company.com,59500,9
+Michael,Goodwin,Assistant Manager,9331690529,michael.goodwin869@company.com,39981,9
+Martha,Thompson,Warehouse Staff,8603182563,martha.thompson839@company.com,65013,10
+Nicholas,Smith,Accountant,5397690061,nicholas.smith128@company.com,44777,10
+Brittany,Gonzalez,Security Staff,2259263880,brittany.gonzalez265@company.com,50269,10
+Jasmine,Harrison,Customer Support,9057158219,jasmine.harrison25@company.com,59833,10
+Anthony,Wilson,Accountant,5207083137,anthony.wilson60@company.com,87097,10
+Erin,Dunn,Cashier,901476143,erin.dunn62@company.com,68037,10
+Debra,Kelly,Security Staff,3131894937,debra.kelly768@company.com,69978,10
+Jeffrey,Perez,Store Manager,2997222002,jeffrey.perez382@company.com,42261,10
+David,Hernandez,Inventory Supervisor,2891745730,david.hernandez566@company.com,39783,10
+Amanda,Gomez,Assistant Manager,4954102285,amanda.gomez511@company.com,87276,10
+Mary,Carter,Inventory Supervisor,6271572580,mary.carter49@company.com,58340,10
+Kaitlin,Kennedy,Store Manager,7844397699,kaitlin.kennedy569@company.com,60021,10
+Alexander,Hughes,Store Manager,9020252566,alexander.hughes103@company.com,67607,10
+Angela,Scott,Customer Support,7039229944,angela.scott44@company.com,65448,10
+Dominic,Walton,Assistant Manager,6940594251,dominic.walton378@company.com,22625,10
+Roy,Hartman,Accountant,6084328251,roy.hartman338@company.com,64365,10
+Bradley,Heath,Customer Support,5197981642,bradley.heath306@company.com,69427,10
+Katie,Fitzpatrick,HR Executive,2593440343,katie.fitzpatrick486@company.com,82078,10
+Andrew,Gutierrez,Cashier,442001462,andrew.gutierrez617@company.com,30840,10
+Hailey,Dickerson,Sales Executive,4202908486,hailey.dickerson863@company.com,82348,10
+Emily,Hicks,Store Manager,2788245716,emily.hicks618@company.com,89396,10
+Amanda,Anderson,Store Manager,5612147059,amanda.anderson44@company.com,36868,10
+Lauren,Gonzalez,Cashier,4683954149,lauren.gonzalez696@company.com,39395,10
+Bailey,Torres,Security Staff,471989884,bailey.torres787@company.com,44458,10
+Lori,Stokes,Store Manager,5327355300,lori.stokes700@company.com,34603,10
+Debra,Perez,Warehouse Staff,6407449263,debra.perez804@company.com,54529,10
+Kathy,Williams,Security Staff,8937925465,kathy.williams746@company.com,48484,10
+Samuel,Brown,Accountant,9223848769,samuel.brown952@company.com,52339,10
+David,Johnson,Inventory Supervisor,7246550174,david.johnson371@company.com,53484,10
+Victoria,Johnson,Customer Support,5251157329,victoria.johnson991@company.com,76051,10
+William,Singleton,Accountant,2964303950,william.singleton866@company.com,72211,10
+Samuel,Estes,Inventory Supervisor,6376896433,samuel.estes725@company.com,80673,10
+Cody,Jackson,Warehouse Staff,6618838156,cody.jackson52@company.com,71121,10
+Jill,Reed,Accountant,6434325154,jill.reed917@company.com,22104,10
+Michael,Smith,Customer Support,8745898800,michael.smith314@company.com,37369,10
+Marcus,Garcia,Inventory Supervisor,8094899978,marcus.garcia95@company.com,67409,10
+Michelle,Aguirre,HR Executive,7418273727,michelle.aguirre44@company.com,29045,10
+Tony,Schmidt,Warehouse Staff,7647266656,tony.schmidt746@company.com,67957,10
+Paige,Ali,Customer Support,3058866454,paige.ali892@company.com,86909,10
+Kelly,Woods,Security Staff,1576318958,kelly.woods746@company.com,53257,10
+Tracey,Gray,Customer Support,3488511794,tracey.gray862@company.com,40229,10
+Kimberly,Gray,Sales Executive,1370497184,kimberly.gray846@company.com,20032,10
+Sarah,Rodriguez,Cashier,7925240059,sarah.rodriguez821@company.com,86150,10
+Erin,Rose,HR Executive,7418834426,erin.rose864@company.com,37395,10
+Cynthia,Guzman,Accountant,4432694146,cynthia.guzman301@company.com,88353,10
+Cynthia,Thomas,Warehouse Staff,6637245808,cynthia.thomas808@company.com,46459,10
+John,Peck,Security Staff,5300430027,john.peck843@company.com,45280,10
+Seth,Walker,Warehouse Staff,4928741491,seth.walker275@company.com,81267,10
+Barbara,Barrett,HR Executive,6571716193,barbara.barrett341@company.com,84280,10
+Lindsey,Todd,Security Staff,4597494629,lindsey.todd12@company.com,21702,10
+Andrew,Gould,Assistant Manager,5123030553,andrew.gould812@company.com,83665,10
+Makayla,Pratt,Assistant Manager,7704070071,makayla.pratt54@company.com,53940,10
+Caleb,Wells,Inventory Supervisor,3311272133,caleb.wells232@company.com,25067,10

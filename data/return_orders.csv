@@ -1,0 +1,151 @@
+order_id,return_date,reason
+2903,21-08-2025 00:00,Wrong Item Delivered
+4791,16-08-2024 00:00,Damaged Product
+1029,05-07-2024 00:00,Damaged Product
+4351,27-06-2025 00:00,Damaged Product
+4925,04-08-2025 00:00,Wrong Item Delivered
+1210,22-08-2023 00:00,Packaging Issue
+4576,25-11-2023 00:00,Wrong Item Delivered
+141,11-09-2023 00:00,Wrong Item Delivered
+4024,28-09-2023 00:00,Packaging Issue
+795,15-05-2023 00:00,Packaging Issue
+4450,02-04-2024 00:00,Customer Changed Mind
+3156,20-12-2024 00:00,Packaging Issue
+3870,24-04-2025 00:00,Wrong Item Delivered
+2518,09-02-2025 00:00,Damaged Product
+4867,02-01-2025 00:00,Customer Changed Mind
+2915,13-02-2024 00:00,Late Delivery
+1219,20-04-2025 00:00,Damaged Product
+2111,04-12-2023 00:00,Expired Product
+720,04-06-2023 00:00,Customer Changed Mind
+369,27-06-2023 00:00,Customer Changed Mind
+1046,15-12-2024 00:00,Customer Changed Mind
+3422,09-07-2024 00:00,Customer Changed Mind
+4812,05-02-2024 00:00,Wrong Item Delivered
+4435,06-11-2025 00:00,Wrong Item Delivered
+4489,13-11-2023 00:00,Wrong Item Delivered
+730,23-03-2025 00:00,Late Delivery
+2221,02-10-2025 00:00,Customer Changed Mind
+812,27-08-2024 00:00,Customer Changed Mind
+4725,02-11-2023 00:00,Expired Product
+3223,25-09-2023 00:00,Packaging Issue
+4896,04-04-2025 00:00,Packaging Issue
+2879,07-07-2025 00:00,Expired Product
+3680,29-01-2025 00:00,Expired Product
+1052,29-11-2025 00:00,Wrong Item Delivered
+4066,26-01-2024 00:00,Expired Product
+3971,15-05-2023 00:00,Expired Product
+3730,02-10-2025 00:00,Expired Product
+115,10-02-2024 00:00,Expired Product
+1275,07-10-2025 00:00,Packaging Issue
+897,02-11-2024 00:00,Expired Product
+230,13-01-2024 00:00,Expired Product
+2440,22-06-2023 00:00,Customer Changed Mind
+2306,13-09-2024 00:00,Wrong Item Delivered
+2092,24-03-2024 00:00,Damaged Product
+671,26-12-2024 00:00,Damaged Product
+2099,14-12-2023 00:00,Late Delivery
+587,11-11-2025 00:00,Packaging Issue
+184,03-12-2024 00:00,Expired Product
+4509,10-01-2025 00:00,Customer Changed Mind
+2323,21-06-2023 00:00,Wrong Item Delivered
+496,10-05-2024 00:00,Customer Changed Mind
+4529,30-12-2025 00:00,Damaged Product
+931,15-01-2025 00:00,Late Delivery
+2732,14-11-2023 00:00,Expired Product
+1431,16-06-2025 00:00,Expired Product
+257,19-01-2024 00:00,Packaging Issue
+2475,12-03-2025 00:00,Packaging Issue
+139,04-01-2024 00:00,Damaged Product
+1603,30-11-2025 00:00,Expired Product
+3574,16-08-2025 00:00,Packaging Issue
+4470,12-06-2023 00:00,Customer Changed Mind
+4974,26-09-2023 00:00,Expired Product
+4603,06-01-2024 00:00,Damaged Product
+3926,21-09-2025 00:00,Customer Changed Mind
+715,30-05-2023 00:00,Customer Changed Mind
+824,02-04-2024 00:00,Damaged Product
+3600,19-07-2024 00:00,Wrong Item Delivered
+3461,01-03-2025 00:00,Late Delivery
+1843,18-07-2023 00:00,Late Delivery
+3743,30-08-2024 00:00,Expired Product
+103,20-05-2023 00:00,Wrong Item Delivered
+73,23-07-2024 00:00,Wrong Item Delivered
+558,23-05-2023 00:00,Expired Product
+1320,24-01-2024 00:00,Expired Product
+51,19-04-2023 00:00,Packaging Issue
+1888,26-06-2023 00:00,Damaged Product
+169,13-02-2025 00:00,Expired Product
+418,18-12-2025 00:00,Expired Product
+2821,08-11-2023 00:00,Late Delivery
+4157,08-05-2024 00:00,Wrong Item Delivered
+1417,31-03-2023 00:00,Customer Changed Mind
+3748,28-09-2025 00:00,Customer Changed Mind
+4046,21-02-2025 00:00,Expired Product
+4502,01-10-2024 00:00,Damaged Product
+4828,02-01-2025 00:00,Late Delivery
+287,28-03-2023 00:00,Expired Product
+803,03-07-2025 00:00,Customer Changed Mind
+1013,09-01-2024 00:00,Expired Product
+445,07-10-2025 00:00,Late Delivery
+1476,14-08-2024 00:00,Expired Product
+1086,24-12-2025 00:00,Wrong Item Delivered
+295,29-04-2023 00:00,Expired Product
+202,14-05-2024 00:00,Packaging Issue
+4570,12-09-2023 00:00,Packaging Issue
+1077,23-06-2023 00:00,Expired Product
+4278,04-04-2023 00:00,Expired Product
+4784,26-09-2025 00:00,Packaging Issue
+833,28-12-2023 00:00,Customer Changed Mind
+1020,08-06-2023 00:00,Wrong Item Delivered
+4150,28-04-2025 00:00,Late Delivery
+3510,03-02-2023 00:00,Damaged Product
+3555,05-05-2023 00:00,Expired Product
+1201,25-11-2025 00:00,Packaging Issue
+4416,26-03-2024 00:00,Damaged Product
+4993,28-04-2023 00:00,Packaging Issue
+405,27-12-2023 00:00,Expired Product
+1821,04-12-2024 00:00,Wrong Item Delivered
+3751,07-01-2024 00:00,Late Delivery
+716,27-09-2025 00:00,Wrong Item Delivered
+4452,20-02-2025 00:00,Customer Changed Mind
+3714,12-01-2025 00:00,Damaged Product
+389,06-01-2023 00:00,Customer Changed Mind
+4584,15-05-2025 00:00,Expired Product
+1027,16-09-2023 00:00,Customer Changed Mind
+4375,27-12-2025 00:00,Late Delivery
+3681,26-02-2023 00:00,Customer Changed Mind
+3487,19-01-2023 00:00,Wrong Item Delivered
+381,24-10-2024 00:00,Late Delivery
+173,11-03-2023 00:00,Customer Changed Mind
+4384,06-08-2024 00:00,Customer Changed Mind
+4838,21-07-2025 00:00,Late Delivery
+4866,14-01-2024 00:00,Damaged Product
+828,28-08-2023 00:00,Late Delivery
+1308,26-04-2025 00:00,Customer Changed Mind
+2908,26-05-2023 00:00,Customer Changed Mind
+1042,30-12-2024 00:00,Late Delivery
+4095,29-01-2024 00:00,Customer Changed Mind
+3584,12-06-2024 00:00,Wrong Item Delivered
+3797,18-04-2025 00:00,Wrong Item Delivered
+4456,15-07-2024 00:00,Wrong Item Delivered
+2944,22-07-2023 00:00,Customer Changed Mind
+4776,13-06-2023 00:00,Customer Changed Mind
+1400,30-10-2025 00:00,Late Delivery
+392,16-06-2025 00:00,Expired Product
+3789,14-12-2024 00:00,Packaging Issue
+3841,23-05-2023 00:00,Damaged Product
+4958,17-08-2025 00:00,Expired Product
+1971,22-01-2024 00:00,Damaged Product
+4077,23-05-2023 00:00,Packaging Issue
+4014,14-07-2024 00:00,Late Delivery
+2020,06-02-2024 00:00,Packaging Issue
+965,18-06-2024 00:00,Packaging Issue
+309,21-02-2025 00:00,Late Delivery
+3501,06-12-2025 00:00,Late Delivery
+1102,01-11-2023 00:00,Late Delivery
+3649,25-04-2024 00:00,Expired Product
+4220,22-10-2024 00:00,Late Delivery
+4110,05-04-2025 00:00,Wrong Item Delivered
+4228,02-11-2023 00:00,Expired Product
+677,22-01-2023 00:00,Expired Product

@@ -1,0 +1,7 @@
+role_name,permission_level
+Admin,5
+Manager,4
+Sales Executive,3
+Inventory Staff,2
+Cashier,2
+Support Staff,1
