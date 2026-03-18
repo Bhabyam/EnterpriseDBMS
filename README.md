@@ -1,380 +1,68 @@
-<!-- # EnterpriseDBMS -->
-# Multi-Branch Retail Management Database
+# Multi-Branch Retail Management System
 
 ## Overview
 
-This project implements a **PostgreSQL database system for managing a multi-branch retail organization**.
+This project implements a **full-stack retail management system** designed for a multi-branch retail organization.
 
-The database models real retail operations including:
+It includes:
 
-* product inventory management
-* customer orders
-* payment tracking
-* inter-branch stock transfers
-* employee access control
+* a **PostgreSQL database** with advanced security (RBAC + RLS)
+* a **Flask backend API** for handling application logic
+* a **React frontend** for user interaction
 
-The system simulates a retail company operating **multiple branches with employees assigned to different operational roles**.
-
-The primary focus of the project is implementing a **secure, scalable relational database architecture** using advanced PostgreSQL features.
-
-Key design concepts implemented in the system include:
-
-* Role-Based Access Control (RBAC)
-* Row Level Security (RLS)
-* Branch-level data isolation
-* Secure role-based authentication
-* Normalized relational schema design
+The system models real-world retail operations such as inventory management, order processing, payments, and inter-branch stock transfers.
 
 ---
 
 # Key Features
 
-### Multi-Branch Retail Architecture
-
-The database supports multiple branches operating independently while sharing centralized product and operational data.
-
-### Role-Based Access Control
-
-Employees are assigned predefined roles such as administrators, managers, sales executives, inventory staff, cashiers, and support staff.
-Permissions are managed through PostgreSQL role groups.
-
-### Row Level Security
-
-Branch-level isolation is enforced using PostgreSQL Row Level Security policies, ensuring employees can only access data associated with their branch.
-
-### Inventory Management
-
-Inventory is tracked per branch, allowing the system to manage stock levels and support transfers of products between branches.
-
-### Transaction Tracking
-
-Customer orders and payments are stored and linked, allowing accurate tracking of retail transactions.
+* Multi-branch retail architecture
+* Role-Based Access Control (RBAC)
+* Row Level Security (RLS) for branch isolation
+* Inventory tracking across branches
+* Order and payment management
+* Inter-branch stock transfers
 
 ---
 
 # System Architecture
 
-The system is designed using a **three-layer architecture** separating presentation, application logic, and data storage.
-
 ```text
-Frontend (React)
+React Frontend
         ↓
-Backend API (Flask)
+Flask Backend API
         ↓
-PostgreSQL Database
+PostgreSQL Database (RBAC + RLS)
 ```
-
-### Frontend (React)
-
-The frontend provides the **user interface for employees** interacting with the system.
-
-Planned features include:
-
-* employee login interface
-* branch dashboard
-* order management interface
-* inventory monitoring
-* payment processing interface
-* branch activity views
-
-React is chosen because it provides:
-
-* fast component-based UI development
-* strong ecosystem for building dashboards
-* easy integration with REST APIs
-
-### Backend (Flask)
-
-The backend application is planned to be implemented using **Flask**.
-
-The backend will handle:
-
-* authentication and login logic
-* API endpoints for frontend requests
-* communication with the PostgreSQL database
-* enforcement of business logic
-* secure database queries
-
-Flask is chosen because:
-
-* it is lightweight and easy to integrate with PostgreSQL
-* it works well for REST API development
-* it is simple to prototype quickly for academic projects
-
-### Database (PostgreSQL)
-
-The PostgreSQL database serves as the **core data layer**, responsible for:
-
-* storing relational data
-* enforcing RBAC permissions
-* enforcing row-level security
-* maintaining transactional integrity
-* managing inventory and transaction data
-
----
-
-# Security Model
-
-The database implements a layered security architecture.
-
-### Login Roles
-
-Each employee is represented by an individual PostgreSQL login role.
-
-### Group Roles
-
-Permissions are assigned through predefined role groups representing job responsibilities.
-
-Examples include:
-
-* `admin_role`
-* `manager_role`
-* `sales_exec_role`
-* `inventory_staff_role`
-* `cashier_role`
-* `support_staff_role`
-
-Employees inherit permissions by being granted membership in these group roles.
-
-### Permission Grants
-
-Database privileges such as `SELECT`, `INSERT`, `UPDATE`, and `DELETE` are granted to role groups based on operational responsibilities.
-
-### Row Level Security Policies
-
-Row Level Security (RLS) policies enforce **branch-level data isolation**, ensuring that employees can only access records belonging to their branch.
-
-For example:
-
-* managers see only their branch orders
-* inventory staff see only their branch stock
-* administrators can access data from all branches
-
----
-
-# Technologies Used
-
-| Component               | Technology            |
-| ----------------------- | --------------------- |
-| Database                | PostgreSQL            |
-| Database Administration | pgAdmin               |
-| Backend                 | Flask (Python)        |
-| Frontend                | React                 |
-| Query Language          | SQL                   |
-| Security                | PostgreSQL RBAC + RLS |
 
 ---
 
 # Project Structure
 
-```
-project/
-│
-├── backend/
-│   ├── app/
-│   │   ├── __init__.py
-│   │   ├── config.py
-│   │   │
-│   │   ├── routes/
-│   │   │   ├── auth.py
-│   │   │   ├── orders.py
-│   │   │   ├── inventory.py
-│   │   │   └── payments.py
-│   │   │
-│   │   ├── services/
-│   │   │   ├── auth_service.py
-│   │   │   ├── order_service.py
-│   │   │   └── inventory_service.py
-│   │   │
-│   │   ├── db/
-│   │   │   └── connection.py
-│   │   │
-│   │   └── utils/
-│   │       └── auth_utils.py
-│   │
-│   ├── run.py
-│   ├── requirements.txt
-│   └── .env
-│
-├── frontend/
-│   ├── public/
-│   │
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── Navbar.jsx
-│   │   │   ├── Table.jsx
-│   │   │
-│   │   ├── pages/
-│   │   │   ├── Login.jsx
-│   │   │   ├── Dashboard.jsx
-│   │   │   ├── Orders.jsx
-│   │   │   ├── Inventory.jsx
-│   │   │   └── Payments.jsx
-│   │   │
-│   │   ├── services/
-│   │   │   ├── api.js
-│   │   │   ├── authService.js
-│   │   │   ├── orderService.js
-│   │   │
-│   │   ├── context/
-│   │   │   └── AuthContext.jsx
-│   │   │
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   │
-│   ├── package.json
-│   └── vite.config.js
-│
-├── database/
-│   ├── retail_db.tar          
-│   ├── schema.sql
-│   ├── roles.sql
-│   ├── policies.sql
-│   │
-│   ├── images/
-│   │   ├── EnterpriseDBMS.drawio
-│   │   ├── EnterpriseDBMS.drawio.pdf
-│   │   ├── EnterpriseDBMS_relation.jpeg
-│   │   └── EnterpriseDBMS_relational.pdf
-│   │
-│   ├── data/
-│   │   ├── accomodates.csv
-│   │   ├── branches.csv
-│   │   ├── brands.csv
-│   │   ├── categories.csv
-│   │   ├── customers.csv
-│   │   ├── employees.csv
-│   │   ├── expenses.csv
-│   │   ├── order_items.csv
-│   │   ├── orders.csv
-│   │   ├── payments.csv
-│   │   ├── products.csv
-│   │   ├── purchase_items.csv
-│   │   ├── purchase_orders.csv
-│   │   ├── return_items.csv
-│   │   ├── return_orders.csv
-│   │   ├── roles.csv
-│   │   ├── stock_movements.csv
-│   │   ├── suppliers.csv
-│   │   ├── supplies.csv
-│   │   ├── units.csv
-│   │   ├── user_sessions.csv
-│   │   └── users.csv
-│
-└── README.md
+```text
+backend/    → API layer (Flask)
+frontend/   → UI layer (React)
+database/   → SQL, data, and schema
 ```
 
 ---
 
-# Database Setup
+# Setup
 
-The database can be initialized in **two different ways**.
+Refer to individual folders:
 
----
-
-# Option 1 — Restore the Preconfigured Database (Recommended)
-
-The repository includes a **PostgreSQL database dump (`retail_db.tar`)** that already contains:
-
-* all tables
-* populated data
-* RBAC role configuration
-* Row Level Security policies
-
-This allows the entire system to be restored quickly.
-
-### Steps
-
-1. Create a PostgreSQL database.
-
-2. Restore the dump using:
-
-```bash
-pg_restore -U postgres -d dbms_project retail_db.tar
-```
-
-After restoration, the database will already contain all schema objects, data, roles, and security policies.
+* `database/README.md` → database setup
+* `backend/README.md` → backend setup
+* `frontend/README.md` → frontend setup
 
 ---
 
-# Option 2 — Rebuild the Database from SQL Files
+# Highlights
 
-The database can also be recreated manually.
-
-### Steps
-
-1. Create a PostgreSQL database.
-
-2. Run the schema file:
-
-```
-schema.sql
-```
-
-3. Configure database roles and permissions:
-
-```
-roles.sql
-```
-
-4. Apply Row Level Security policies:
-
-```
-policies.sql
-```
-
-5. Import the dataset from CSV files located in the `data/` directory.
-
-Example:
-
-```sql
-COPY products FROM 'data/products.csv' CSV HEADER;
-```
-
-Repeat the import process for the remaining tables.
-
----
-
-# Security Implementation Summary
-
-The database security architecture combines multiple mechanisms:
-
-* individual login roles for employees
-* role groups defining operational permissions
-* permission grants restricting database operations
-* row-level security policies enforcing branch isolation
-
-This ensures that employees only interact with data relevant to their responsibilities and branch assignment.
-
----
-
-# Development Plan
-
-The project is being developed in stages:
-
-1. **Database Design**
-
-   * relational schema creation
-   * data population
-   * RBAC implementation
-   * row-level security policies
-
-2. **Backend Development**
-
-   * REST API using Flask
-   * authentication endpoints
-   * database interaction layer
-
-3. **Frontend Development**
-
-   * React-based dashboard
-   * inventory and order management interfaces
-   * role-specific UI views
+This system uses **PostgreSQL Row Level Security with per-user database connections**, ensuring that access control is enforced directly at the database level rather than the application layer.
 
 ---
 
 # Project Context
 
-This project was developed as part of a **Database Management Systems course**.
-
-The goal is to design and implement a **secure, scalable relational database system for a multi-branch retail environment**, demonstrating real-world database architecture and access control using PostgreSQL.
+Developed as part of a **Database Management Systems course**, focusing on building a secure and scalable real-world database system.
