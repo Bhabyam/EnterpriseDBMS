@@ -1,7 +1,10 @@
 # Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 backend_env/
+.env
 
 # Node
 node_modules/
@@ -14,3 +17,6 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# Logs
+*.log
