@@ -28,13 +28,24 @@ The file `retail_db.tar` contains:
 
 * complete schema
 * populated data
-* roles and permissions
 * RLS policies
 
 ### Restore using:
 
 ```bash
 pg_restore -U postgres -d dbms_project retail_db.tar
+```
+
+Configure roles:
+
+```
+roles.sql
+```
+
+Apply policies:
+
+```
+policies.sql
 ```
 
 ---
