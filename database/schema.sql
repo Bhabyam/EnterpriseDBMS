@@ -179,6 +179,15 @@ CREATE TABLE purchase_items (
     sub_total NUMERIC(10,2) GENERATED ALWAYS AS (quantity * cost_price)
 );
 
+CREATE TABLE purchase_payments (
+    payment_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    po_id INT NOT NULL UNIQUE REFERENCES purchase_orders(po_id),
+    amount NUMERIC(10,2) NOT NULL CHECK (amount > 0),
+    payment_method VARCHAR(50) NOT NULL,
+    transaction_id VARCHAR(100) NOT NULL UNIQUE,
+    payment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 -- Supplier capability table (M:N relationship)
 
 CREATE TABLE supplies (
