@@ -5,6 +5,7 @@ __pycache__/
 *.pyd
 backend_env/
 .env
+flask_session
 
 # Node
 node_modules/
