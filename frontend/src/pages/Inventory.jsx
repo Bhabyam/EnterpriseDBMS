@@ -4,6 +4,9 @@ import API from "../services/api";
 
 export default function Inventory() {
 
+  const role = localStorage.getItem("role");
+  const isAdmin = role === "Admin";
+
   const [stock, setStock] = useState([]);
 
   const [search, setSearch] = useState("");
@@ -47,7 +50,7 @@ export default function Inventory() {
           p.product_name.toLowerCase().includes(term) ||
           p.brand_name.toLowerCase().includes(term) ||
           p.category_name.toLowerCase().includes(term) ||
-          p.branch_name.toLowerCase().includes(term)
+          (isAdmin && p.branch_name.toLowerCase().includes(term))
         );
       }
 
@@ -134,7 +137,11 @@ export default function Inventory() {
         {/* SEARCH */}
         <input
           type="text"
-          placeholder="Search product / brand / category / branch"
+          placeholder={
+            isAdmin
+              ? "Search product / brand / category / branch"
+              : "Search product / brand / category"
+          }
           className="p-2 border rounded w-[300px]"
           value={search}
           onChange={(e) => {

@@ -22,6 +22,8 @@ import SupplierPayments from "../pages/SupplierPayments";
 import Inventory from "../pages/Inventory";
 import PurchaseOrders from "../pages/PurchaseOrdersHistory";
 import PurchaseOrderDetails from "../pages/PurchaseOrderDetails";
+import ReturnHistory from "../pages/ReturnHistory";
+import PlaceOrder from "../pages/PlaceOrder";
 
 export default function AppRoutes() {
   return (
@@ -80,6 +82,7 @@ export default function AppRoutes() {
           }
         >
           <Route path="/payments" element={<PaymentPage />} />
+          <Route path="/returns" element={<ReturnHistory />} />
         </Route>
 
         <Route
@@ -100,6 +103,13 @@ export default function AppRoutes() {
         >
           <Route path="/employees" element={<Employees />} />
           <Route path="/sessions" element={<SeeUserSessions />} />
+        </Route>
+
+        <Route
+          element={<ProtectedRoute allowedRoles={["Cashier"]} />}
+        >
+          <Route path="/products" element={<Products />} />
+          <Route path="/place_order" element={<PlaceOrder />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/login" />} />

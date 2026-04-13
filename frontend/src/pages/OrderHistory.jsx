@@ -2,6 +2,7 @@ import { useEffect, useState, useMemo } from "react";
 import DashboardLayout from "../components/layout/DashboardLayout";
 import API from "../services/api";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const statusColors = {
   Delivered: "bg-green-500 text-white",
@@ -28,6 +29,7 @@ export default function Orders() {
   const [rowsPerPage, setRowsPerPage] = useState(25);
 
   const navigate = useNavigate();
+  const location = useLocation()
 
   // 🔹 FETCH DATA
   useEffect(() => {
@@ -35,6 +37,15 @@ export default function Orders() {
       .then((res) => setOrders(res.data.data || []))
       .catch(console.error);
   }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const status = params.get("status");
+
+    if (status) {
+      setSelectedStatus(status);
+    }
+  }, [location.search]);
 
   // 🔹 BRANCHES
   const branches = useMemo(() => {

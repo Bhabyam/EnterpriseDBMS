@@ -416,7 +416,7 @@ def get_insights():
         insights = [
             f"{pending_orders or 0} customer orders pending",
             f"{pending_po or 0} purchase orders pending",
-            f"{sessions_today or 0} user sessions today"
+            # f"{sessions_today or 0} user sessions today"
         ]
 
         return success(insights)
@@ -445,3 +445,4 @@ def get_dashboard_branches():
 
     except Exception as e:
         return error(str(e))
+    

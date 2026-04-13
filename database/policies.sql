@@ -79,3 +79,51 @@ ON payments
 FOR ALL
 TO admin_role
 USING (true);
+
+CREATE POLICY admin_return_orders_policy
+ON return_orders
+FOR ALL
+TO admin_role
+USING (true);
+
+CREATE POLICY branch_return_orders_policy
+ON return_orders
+FOR ALL
+TO manager_role, cashier_role
+USING (
+    order_id IN (
+        SELECT o.order_id
+        FROM orders o
+        WHERE o.branch_id = (
+            SELECT branch_id
+            FROM users
+            WHERE username = current_user
+        )
+    )
+);
+
+CREATE POLICY admin_return_items_policy
+ON return_items
+FOR ALL
+TO admin_role
+USING (true);
+
+CREATE POLICY branch_return_items_policy
+ON return_items
+FOR ALL
+TO manager_role, cashier_role
+USING (
+    return_id IN (
+        SELECT ro.return_id
+        FROM return_orders ro
+        WHERE ro.order_id IN (
+            SELECT o.order_id
+            FROM orders o
+            WHERE o.branch_id = (
+                SELECT branch_id
+                FROM users
+                WHERE username = current_user
+            )
+        )
+    )
+);

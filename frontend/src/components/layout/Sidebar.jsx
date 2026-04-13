@@ -20,9 +20,10 @@ export default function Sidebar() {
       { name: "Dashboard", path: "/dashboard/admin" },
       { name: "Customer Orders", path: "/orders" },
       { name: "Customer Payments", path: "/payments" },
-      { name: "Supplier Payments", path: "/supplier_payments" },
+      { name: "Return History", path: "/returns" },
       { name: "Inventory", path: "/inventory" },
       { name: "Purchase Orders", path: "/purchase_orders" },
+      { name: "Supplier Payments", path: "/supplier_payments" },
       { name: "Employees", path: "/employees" },
       { name: "User Sessions", path: "/sessions" },
     ],
@@ -31,9 +32,10 @@ export default function Sidebar() {
       { name: "Dashboard", path: "/dashboard/manager" },
       { name: "Customer Orders", path: "/orders" },
       { name: "Customer Payments", path: "/payments" },
-      { name: "Supplier Payments", path: "/supplier_payments" },
+      { name: "Return History", path: "/returns" },
       { name: "Inventory", path: "/inventory" },
       { name: "Purchase Orders", path: "/purchase_orders" },
+      { name: "Supplier Payments", path: "/supplier_payments" },
     ],
 
     "Sales Executive": [
@@ -49,9 +51,11 @@ export default function Sidebar() {
 
     Cashier: [
       { name: "Dashboard", path: "/dashboard/cashier" },
+      { name: "Products", path: "/products" },
+      { name: "Place Order", path: "/place_order" },
       { name: "Customer Orders", path: "/orders" },
       { name: "Customer Payments", path: "/payments" },
-      { name: "Products", path: "/products" },
+      { name: "Return History", path: "/returns" },
     ],
 
     "Support Staff": [

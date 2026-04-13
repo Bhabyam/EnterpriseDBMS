@@ -16,6 +16,8 @@ from routes.user_sessions import user_sessions_bp
 from routes.supplier_payments import supplier_payments_bp
 from routes.inventory import inventory_bp
 from routes.purchase_orders import purchase_orders_bp
+from routes.returns import returns_bp
+from routes.place_order import place_order_bp
 
 app = Flask(__name__)
 
@@ -62,6 +64,8 @@ app.register_blueprint(user_sessions_bp)
 app.register_blueprint(supplier_payments_bp)
 app.register_blueprint(inventory_bp)
 app.register_blueprint(purchase_orders_bp)
+app.register_blueprint(returns_bp)
+app.register_blueprint(place_order_bp)
 
 @app.route("/")
 def home():

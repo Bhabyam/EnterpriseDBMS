@@ -27,10 +27,21 @@ GRANT INSERT ON orders, payments TO cashier_role;
 
 GRANT SELECT ON ALL TABLES IN SCHEMA public TO support_staff_role;
 
+GRANT SELECT ON return_orders TO manager_role;
+GRANT SELECT ON return_items TO manager_role;
+GRANT SELECT ON orders TO manager_role;
+GRANT SELECT ON customers TO manager_role;
+GRANT SELECT ON return_orders TO cashier_role;
+GRANT SELECT ON return_items TO cashier_role;
+GRANT SELECT ON orders TO cashier_role;
+GRANT SELECT ON customers TO cashier_role;
+
 ALTER TABLE orders ENABLE ROW LEVEL SECURITY;
 ALTER TABLE accomodates ENABLE ROW LEVEL SECURITY;
 ALTER TABLE stock_movements ENABLE ROW LEVEL SECURITY;
 ALTER TABLE payments ENABLE ROW LEVEL SECURITY;
+ALTER TABLE return_orders ENABLE ROW LEVEL SECURITY;
+ALTER TABLE return_items ENABLE ROW LEVEL SECURITY;
 
 
 -- Create Roles

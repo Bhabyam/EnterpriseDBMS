@@ -2,16 +2,16 @@ import { useEffect, useState } from "react";
 import DashboardLayout from "../../components/layout/DashboardLayout";
 import API from "../../services/api";
 import {
-  AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer
+  AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid
 } from "recharts";
 
 /* =========================
-   🔹 KPI CARD
+   🔹 KPI CARD (UPGRADED)
 ========================= */
-function Card({ title, value }) {
+function Card({ title, value, color }) {
   return (
-    <div className="bg-white p-4 rounded-xl shadow hover:shadow-lg transition">
-      <p className="text-gray-500 text-sm">{title}</p>
+    <div className={`p-4 rounded-xl shadow text-white ${color}`}>
+      <p className="text-sm opacity-80">{title}</p>
       <h2 className="text-xl font-bold">
         {title.includes("Revenue")
           ? `Rs. ${Number(value || 0).toLocaleString()}`
@@ -50,7 +50,8 @@ export default function ManagerDashboard() {
 
   const [period, setPeriod] = useState("week");
 
-  const branch_id = localStorage.getItem("branch_id");
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
+  const branch_id = user?.branch_id;
 
   /* =========================
      🔹 FETCH DATA
@@ -58,10 +59,7 @@ export default function ManagerDashboard() {
   const fetchData = async () => {
 
     try {
-      const params = {
-        branch_id,
-        period
-      };
+      const params = { branch_id, period };
 
       const [
         summaryRes,
@@ -77,7 +75,8 @@ export default function ManagerDashboard() {
         API.get("/api/dashboard/insights", { params })
       ]);
 
-      setSummary(summaryRes.data.data);
+      const summaryData = summaryRes.data.data || {};
+      setSummary(summaryData);
 
       setRevenueData(
         (revenueRes.data.data || []).map(d => ({
@@ -93,7 +92,6 @@ export default function ManagerDashboard() {
         }))
       );
 
-      // 🔥 LOW STOCK FILTER (< 10)
       const low = (inventoryRes.data.data || []).filter(i => i.quantity < 10);
       setLowStock(low);
 
@@ -105,8 +103,8 @@ export default function ManagerDashboard() {
   };
 
   useEffect(() => {
-    fetchData();
-  }, [period]);
+    if (branch_id) fetchData();
+  }, [period, branch_id]);
 
   return (
     <DashboardLayout>
@@ -127,15 +125,15 @@ export default function ManagerDashboard() {
         </select>
       </div>
 
-      {/* KPI */}
+      {/* 🔥 KPI CARDS (UPGRADED) */}
       <div className="grid grid-cols-4 gap-4 mb-6">
-        <Card title="Total Orders" value={summary.orders} />
-        <Card title="Revenue" value={summary.revenue} />
-        <Card title="Returns" value={summary.returns} />
-        <Card title="Net Revenue" value={summary.net_revenue} />
+        <Card title="Total Orders" value={summary.orders} color="bg-blue-500" />
+        <Card title="Revenue" value={summary.revenue} color="bg-green-500" />
+        <Card title="Pending Orders" value={insights[0]?.split(" ")[0] || 0} color="bg-yellow-500" />
+        <Card title="Low Stock Items" value={lowStock.length} color="bg-red-500" />
       </div>
 
-      {/* GRAPHS */}
+      {/* 🔥 GRAPHS (IMPROVED) */}
       <div className="grid grid-cols-2 gap-6 mb-6">
 
         {/* Revenue */}
@@ -143,10 +141,23 @@ export default function ManagerDashboard() {
           <h3 className="mb-3 font-semibold">Revenue Trend</h3>
           <ResponsiveContainer width="100%" height={250}>
             <AreaChart data={revenueData}>
-              <XAxis dataKey="date"/>
-              <YAxis/>
+              <defs>
+                <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#2563eb" stopOpacity={0.8}/>
+                  <stop offset="95%" stopColor="#2563eb" stopOpacity={0}/>
+                </linearGradient>
+              </defs>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="date" tick={{ fontSize: 10 }} />
+              <YAxis tick={{ fontSize: 10 }} />
               <Tooltip content={<CustomTooltip />} />
-              <Area dataKey="revenue" stroke="#2563eb" fill="#93c5fd" />
+              <Area
+                type="monotone"
+                dataKey="revenue"
+                stroke="#2563eb"
+                fillOpacity={1}
+                fill="url(#colorRevenue)"
+              />
             </AreaChart>
           </ResponsiveContainer>
         </div>
@@ -156,17 +167,30 @@ export default function ManagerDashboard() {
           <h3 className="mb-3 font-semibold">Orders Trend</h3>
           <ResponsiveContainer width="100%" height={250}>
             <AreaChart data={ordersData}>
-              <XAxis dataKey="date"/>
-              <YAxis/>
+              <defs>
+                <linearGradient id="colorOrders" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#16a34a" stopOpacity={0.8}/>
+                  <stop offset="95%" stopColor="#16a34a" stopOpacity={0}/>
+                </linearGradient>
+              </defs>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="date" tick={{ fontSize: 10 }} />
+              <YAxis tick={{ fontSize: 10 }} />
               <Tooltip content={<CustomTooltip />} />
-              <Area dataKey="orders" stroke="#16a34a" fill="#86efac" />
+              <Area
+                type="monotone"
+                dataKey="orders"
+                stroke="#16a34a"
+                fillOpacity={1}
+                fill="url(#colorOrders)"
+              />
             </AreaChart>
           </ResponsiveContainer>
         </div>
 
       </div>
 
-      {/* LOW STOCK + INSIGHTS */}
+      {/* 🔥 ALERTS SECTION */}
       <div className="grid grid-cols-2 gap-6">
 
         {/* LOW STOCK */}
@@ -176,8 +200,8 @@ export default function ManagerDashboard() {
             <p>No low stock items 🎉</p>
           ) : (
             lowStock.slice(0, 5).map((item, i) => (
-              <p key={i}>
-                {item.product_name} — {item.quantity}
+              <p key={i} className="text-sm">
+                ⚠ {item.product_name} — {item.quantity}
               </p>
             ))
           )}
@@ -187,7 +211,7 @@ export default function ManagerDashboard() {
         <div className="bg-white p-4 rounded-xl shadow">
           <h3 className="mb-3 font-semibold">Insights</h3>
           {insights.map((i, idx) => (
-            <p key={idx}>• {i}</p>
+            <p key={idx} className="text-sm">• {i}</p>
           ))}
         </div>
 
