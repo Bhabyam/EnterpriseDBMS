@@ -1,73 +1,27 @@
 import { useEffect, useState } from "react";
 import DashboardLayout from "../../components/layout/DashboardLayout";
+import MetricCard from "../../components/dashboard/MetricCard";
 import API from "../../services/api";
+import { FaChartLine, FaShoppingBag, FaExclamationTriangle, FaLightbulb, FaBuilding, FaCalendarAlt, FaChevronRight, FaClock, FaCheckCircle } from "react-icons/fa";
 import {
   AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid
 } from "recharts";
 
-/* =========================
-   🔹 KPI CARD (UPGRADED)
-========================= */
-function Card({ title, value, color }) {
-  return (
-    <div className={`p-4 rounded-xl shadow text-white ${color}`}>
-      <p className="text-sm opacity-80">{title}</p>
-      <h2 className="text-xl font-bold">
-        {title.includes("Revenue")
-          ? `Rs. ${Number(value || 0).toLocaleString()}`
-          : value}
-      </h2>
-    </div>
-  );
-}
-
-/* =========================
-   🔹 TOOLTIP
-========================= */
-const CustomTooltip = ({ active, payload, label }) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="bg-white p-3 border rounded shadow text-sm">
-        <p className="font-semibold">{label}</p>
-        {payload.map((p, i) => (
-          <p key={i}>
-            {p.name}: {Number(p.value).toLocaleString()}
-          </p>
-        ))}
-      </div>
-    );
-  }
-  return null;
-};
-
 export default function ManagerDashboard() {
-
   const [summary, setSummary] = useState({});
   const [revenueData, setRevenueData] = useState([]);
   const [ordersData, setOrdersData] = useState([]);
   const [lowStock, setLowStock] = useState([]);
   const [insights, setInsights] = useState([]);
-
   const [period, setPeriod] = useState("week");
 
   const user = JSON.parse(localStorage.getItem("user") || "{}");
   const branch_id = user?.branch_id;
 
-  /* =========================
-     🔹 FETCH DATA
-  ========================= */
   const fetchData = async () => {
-
     try {
       const params = { branch_id, period };
-
-      const [
-        summaryRes,
-        revenueRes,
-        ordersRes,
-        inventoryRes,
-        insightsRes
-      ] = await Promise.all([
+      const [summaryRes, revenueRes, ordersRes, inventoryRes, insightsRes] = await Promise.all([
         API.get("/api/dashboard/summary", { params }),
         API.get("/api/dashboard/revenue_trend", { params }),
         API.get("/api/dashboard/orders_vs_purchase", { params }),
@@ -75,148 +29,170 @@ export default function ManagerDashboard() {
         API.get("/api/dashboard/insights", { params })
       ]);
 
-      const summaryData = summaryRes.data.data || {};
-      setSummary(summaryData);
-
-      setRevenueData(
-        (revenueRes.data.data || []).map(d => ({
-          date: d.date,
-          revenue: Number(d.revenue || 0)
-        }))
-      );
-
-      setOrdersData(
-        (ordersRes.data.data || []).map(d => ({
-          date: d.date,
-          orders: Number(d.orders || 0)
-        }))
-      );
-
-      const low = (inventoryRes.data.data || []).filter(i => i.quantity < 10);
-      setLowStock(low);
-
+      setSummary(summaryRes.data.data || {});
+      setRevenueData((revenueRes.data.data || []).map(d => ({ date: d.date, revenue: Number(d.revenue || 0) })));
+      setOrdersData((ordersRes.data.data || []).map(d => ({ date: d.date, orders: Number(d.orders || 0) })));
+      setLowStock((inventoryRes.data.data || []).filter(i => i.quantity < 10));
       setInsights(insightsRes.data.data || []);
-
-    } catch (err) {
-      console.error(err);
-    }
+    } catch (err) { console.error(err); }
   };
 
   useEffect(() => {
     if (branch_id) fetchData();
   }, [period, branch_id]);
 
-  return (
-    <DashboardLayout>
+  const isDark = document.documentElement.classList.contains("dark");
 
-      <h1 className="text-2xl font-bold mb-6">Manager Dashboard</h1>
-
-      {/* FILTER */}
-      <div className="flex gap-3 mb-6">
-        <select
-          value={period}
-          onChange={(e) => setPeriod(e.target.value)}
-          className="p-2 border rounded bg-white"
-        >
-          <option value="day">Day</option>
-          <option value="week">Week</option>
-          <option value="month">Month</option>
-          <option value="year">Year</option>
-        </select>
-      </div>
-
-      {/* 🔥 KPI CARDS (UPGRADED) */}
-      <div className="grid grid-cols-4 gap-4 mb-6">
-        <Card title="Total Orders" value={summary.orders} color="bg-blue-500" />
-        <Card title="Revenue" value={summary.revenue} color="bg-green-500" />
-        <Card title="Pending Orders" value={insights[0]?.split(" ")[0] || 0} color="bg-yellow-500" />
-        <Card title="Low Stock Items" value={lowStock.length} color="bg-red-500" />
-      </div>
-
-      {/* 🔥 GRAPHS (IMPROVED) */}
-      <div className="grid grid-cols-2 gap-6 mb-6">
-
-        {/* Revenue */}
-        <div className="bg-white p-4 rounded-xl shadow">
-          <h3 className="mb-3 font-semibold">Revenue Trend</h3>
-          <ResponsiveContainer width="100%" height={250}>
-            <AreaChart data={revenueData}>
-              <defs>
-                <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#2563eb" stopOpacity={0.8}/>
-                  <stop offset="95%" stopColor="#2563eb" stopOpacity={0}/>
-                </linearGradient>
-              </defs>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-              <YAxis tick={{ fontSize: 10 }} />
-              <Tooltip content={<CustomTooltip />} />
-              <Area
-                type="monotone"
-                dataKey="revenue"
-                stroke="#2563eb"
-                fillOpacity={1}
-                fill="url(#colorRevenue)"
-              />
-            </AreaChart>
-          </ResponsiveContainer>
-        </div>
-
-        {/* Orders */}
-        <div className="bg-white p-4 rounded-xl shadow">
-          <h3 className="mb-3 font-semibold">Orders Trend</h3>
-          <ResponsiveContainer width="100%" height={250}>
-            <AreaChart data={ordersData}>
-              <defs>
-                <linearGradient id="colorOrders" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#16a34a" stopOpacity={0.8}/>
-                  <stop offset="95%" stopColor="#16a34a" stopOpacity={0}/>
-                </linearGradient>
-              </defs>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-              <YAxis tick={{ fontSize: 10 }} />
-              <Tooltip content={<CustomTooltip />} />
-              <Area
-                type="monotone"
-                dataKey="orders"
-                stroke="#16a34a"
-                fillOpacity={1}
-                fill="url(#colorOrders)"
-              />
-            </AreaChart>
-          </ResponsiveContainer>
-        </div>
-
-      </div>
-
-      {/* 🔥 ALERTS SECTION */}
-      <div className="grid grid-cols-2 gap-6">
-
-        {/* LOW STOCK */}
-        <div className="bg-white p-4 rounded-xl shadow">
-          <h3 className="mb-3 font-semibold text-red-600">Low Stock Alerts</h3>
-          {lowStock.length === 0 ? (
-            <p>No low stock items 🎉</p>
-          ) : (
-            lowStock.slice(0, 5).map((item, i) => (
-              <p key={i} className="text-sm">
-                ⚠ {item.product_name} — {item.quantity}
-              </p>
-            ))
-          )}
-        </div>
-
-        {/* INSIGHTS */}
-        <div className="bg-white p-4 rounded-xl shadow">
-          <h3 className="mb-3 font-semibold">Insights</h3>
-          {insights.map((i, idx) => (
-            <p key={idx} className="text-sm">• {i}</p>
+  const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-2xl border-none ring-1 ring-black/5 dark:ring-white/10">
+          <p className="font-black text-[10px] uppercase tracking-widest text-slate-400 mb-2">{label}</p>
+          {payload.map((p, i) => (
+            <div key={i} className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: p.color }} />
+              <span className="text-xs font-bold text-slate-700 dark:text-slate-200">{p.name}: {p.name.includes("Revenue") ? `₹${Number(p.value).toLocaleString()}` : p.value}</span>
+            </div>
           ))}
         </div>
+      );
+    }
+    return null;
+  };
 
+  return (
+    <DashboardLayout>
+      <div className="max-w-[1600px] mx-auto animate-fade-in pb-10">
+        {/* HEADER */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-8">
+          <div>
+            <h1 className="text-4xl font-black text-slate-800 dark:text-white tracking-tight uppercase italic">Manager Terminal</h1>
+            <p className="text-slate-500 dark:text-slate-400 font-bold text-sm mt-1 uppercase tracking-widest">Branch Operations Control</p>
+          </div>
+          
+          <div className="flex items-center gap-4 bg-white/50 dark:bg-slate-800/50 p-2 rounded-[1.5rem] backdrop-blur-xl border border-slate-100 dark:border-slate-700/50 shadow-sm">
+            <div className="px-5 py-3 rounded-xl bg-transparent font-black text-[10px] uppercase tracking-widest text-slate-600 dark:text-slate-300 flex items-center gap-2">
+              <FaBuilding className="text-indigo-500" /> {user.branch_name || `Branch #${branch_id}`}
+            </div>
+            <div className="w-px h-6 bg-slate-200 dark:bg-slate-700" />
+            <div className="relative group">
+              <FaCalendarAlt className="absolute left-4 top-1/2 -translate-y-1/2 text-indigo-500 text-xs" />
+              <select
+                value={period}
+                onChange={(e) => setPeriod(e.target.value)}
+                className="pl-10 pr-8 py-3 rounded-xl bg-transparent font-black text-[10px] uppercase tracking-widest text-slate-600 dark:text-slate-300 outline-none cursor-pointer"
+              >
+                <option value="day">Today</option>
+                <option value="week">This Week</option>
+                <option value="month">This Month</option>
+                <option value="year">This Year</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        {/* KPI GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <MetricCard title="Branch Orders" value={summary.orders || 0} icon={FaShoppingBag} color="indigo" />
+          <MetricCard title="Local Revenue" value={`₹${Number(summary.revenue || 0).toLocaleString()}`} icon={FaChartLine} color="emerald" />
+          <MetricCard title="Pending Review" value={insights[0]?.split(" ")[0] || 0} icon={FaClock} color="amber" />
+          <MetricCard title="Inventory Alerts" value={lowStock.length} icon={FaExclamationTriangle} color="rose" />
+        </div>
+
+        {/* CHARTS ROW */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+          <ChartContainer title="Revenue Trajectory" subtitle="Income velocity analysis">
+            <ResponsiveContainer width="100%" height={300}>
+              <AreaChart data={revenueData}>
+                <defs>
+                  <linearGradient id="revGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#6366f1" stopOpacity={0.3}/>
+                    <stop offset="95%" stopColor="#6366f1" stopOpacity={0}/>
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#334155" : "#e2e8f0"} vertical={false} />
+                <XAxis dataKey="date" axisLine={false} tickLine={false} tick={{ fill: "#94a3b8", fontSize: 10, fontWeight: 700 }} />
+                <YAxis axisLine={false} tickLine={false} tick={{ fill: "#94a3b8", fontSize: 10, fontWeight: 700 }} />
+                <Tooltip content={<CustomTooltip />} />
+                <Area type="monotone" dataKey="revenue" name="Revenue" stroke="#6366f1" strokeWidth={3} fill="url(#revGrad)" />
+              </AreaChart>
+            </ResponsiveContainer>
+          </ChartContainer>
+
+          <ChartContainer title="Order Volume" subtitle="Fulfillment trends">
+            <ResponsiveContainer width="100%" height={300}>
+              <AreaChart data={ordersData}>
+                <defs>
+                  <linearGradient id="orderGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#10b981" stopOpacity={0.3}/>
+                    <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#334155" : "#e2e8f0"} vertical={false} />
+                <XAxis dataKey="date" axisLine={false} tickLine={false} tick={{ fill: "#94a3b8", fontSize: 10, fontWeight: 700 }} />
+                <YAxis axisLine={false} tickLine={false} tick={{ fill: "#94a3b8", fontSize: 10, fontWeight: 700 }} />
+                <Tooltip content={<CustomTooltip />} />
+                <Area type="monotone" dataKey="orders" name="Orders" stroke="#10b981" strokeWidth={3} fill="url(#orderGrad)" />
+              </AreaChart>
+            </ResponsiveContainer>
+          </ChartContainer>
+        </div>
+
+        {/* BOTTOM ROW */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2 bg-white/70 dark:bg-slate-800/50 backdrop-blur-xl rounded-[2.5rem] border border-slate-100 dark:border-slate-700 p-8 shadow-2xl shadow-slate-200/50 dark:shadow-none">
+            <div className="flex items-center justify-between mb-8">
+              <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Critical Low Stock</h3>
+              <button onClick={() => navigate("/inventory")} className="text-[10px] font-black text-indigo-500 uppercase tracking-widest flex items-center gap-2 hover:underline">Full Inventory <FaChevronRight /></button>
+            </div>
+            <div className="space-y-4">
+              {lowStock.length === 0 ? (
+                <div className="flex flex-col items-center justify-center py-10 opacity-50">
+                  <FaCheckCircle className="text-4xl text-emerald-500 mb-4" />
+                  <p className="text-xs font-bold text-slate-400 italic">Inventory is healthy across all SKUs</p>
+                </div>
+              ) : (
+                lowStock.slice(0, 5).map((item, i) => (
+                  <div key={i} className="flex items-center justify-between p-4 rounded-2xl bg-rose-50 dark:bg-rose-900/10 border border-rose-100 dark:border-rose-800/30">
+                    <div className="flex items-center gap-4">
+                      <div className="w-10 h-10 rounded-xl bg-rose-500 text-white flex items-center justify-center font-black text-xs">!</div>
+                      <div>
+                        <p className="text-sm font-bold text-slate-800 dark:text-white uppercase">{item.product_name}</p>
+                        <p className="text-[9px] font-black text-rose-500 uppercase tracking-tighter">Current Stock: {item.quantity}</p>
+                      </div>
+                    </div>
+                    <button onClick={() => navigate("/stock_movement")} className="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 border border-rose-100 dark:border-rose-900/50 text-[10px] font-black text-rose-500 uppercase tracking-widest hover:bg-rose-500 hover:text-white transition-all shadow-sm">Restock</button>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+
+          <div className="bg-white/70 dark:bg-slate-800/50 backdrop-blur-xl rounded-[2.5rem] border border-slate-100 dark:border-slate-700 p-8 shadow-2xl shadow-slate-200/50 dark:shadow-none">
+            <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-8">Performance Insights</h3>
+            <div className="space-y-4">
+              {insights.map((i, idx) => (
+                <div key={idx} className="flex gap-4 p-5 rounded-3xl bg-indigo-50/50 dark:bg-indigo-900/10 border border-indigo-100 dark:border-indigo-800/30">
+                  <FaLightbulb className="text-indigo-500 mt-1 flex-shrink-0" />
+                  <p className="text-xs font-bold text-slate-600 dark:text-slate-300 leading-relaxed">"{i}"</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-
     </DashboardLayout>
+  );
+}
+
+function ChartContainer({ title, subtitle, children }) {
+  return (
+    <div className="bg-white/70 dark:bg-slate-800/50 backdrop-blur-xl rounded-[2.5rem] border border-slate-100 dark:border-slate-700 p-8 shadow-2xl shadow-slate-200/50 dark:shadow-none animate-fade-in">
+      <div className="mb-8">
+        <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{title}</h3>
+        <p className="text-[10px] font-bold text-slate-300 dark:text-slate-600 uppercase mt-1">{subtitle}</p>
+      </div>
+      {children}
+    </div>
   );
 }

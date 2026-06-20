@@ -1,7 +1,7 @@
 CREATE POLICY branch_orders_policy
 ON orders
 FOR ALL
-TO manager_role, sales_exec_role, cashier_role
+TO manager_role, sales_exec_role, cashier_role, support_staff_role
 USING (
     branch_id = (
         SELECT branch_id
@@ -19,7 +19,7 @@ USING (true);
 CREATE POLICY branch_inventory_policy
 ON accomodates
 FOR ALL
-TO manager_role, inventory_staff_role
+TO manager_role, cashier_role, sales_exec_role, support_staff_role
 USING (
     branch_id = (
         SELECT branch_id
@@ -31,7 +31,7 @@ USING (
 CREATE POLICY admin_inventory_policy
 ON accomodates
 FOR ALL
-TO admin_role
+TO admin_role, inventory_staff_role
 USING (true);
 
 CREATE POLICY branch_stock_policy
@@ -89,7 +89,7 @@ USING (true);
 CREATE POLICY branch_return_orders_policy
 ON return_orders
 FOR ALL
-TO manager_role, cashier_role
+TO manager_role, cashier_role, support_staff_role, sales_exec_role
 USING (
     order_id IN (
         SELECT o.order_id
@@ -111,7 +111,7 @@ USING (true);
 CREATE POLICY branch_return_items_policy
 ON return_items
 FOR ALL
-TO manager_role, cashier_role
+TO manager_role, cashier_role, support_staff_role
 USING (
     return_id IN (
         SELECT ro.return_id

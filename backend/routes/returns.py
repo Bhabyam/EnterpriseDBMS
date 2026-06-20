@@ -14,7 +14,7 @@ def c(user):
 # 🔹 1. RETURN HISTORY
 @returns_bp.route("/", methods=["GET", "OPTIONS"])
 @jwt_or_session_required
-@roles_required("Admin", "Manager", "Cashier")
+@roles_required("Admin", "Manager", "Cashier", "Support Staff")
 def get_returns():
 
     if request.method == "OPTIONS":
@@ -80,7 +80,7 @@ def get_returns():
 # 🔹 2. RETURN DETAILS
 @returns_bp.route("/<int:return_id>", methods=["GET", "OPTIONS"])
 @jwt_or_session_required
-@roles_required("Cashier")
+@roles_required("Admin", "Manager", "Cashier", "Support Staff")
 def get_return_details(return_id):
 
     if request.method == "OPTIONS":

@@ -14,12 +14,12 @@ def c(user):
 # ✅ GET FULL INVENTORY (ALL BRANCHES)
 @inventory_bp.route("/", methods=["GET"])
 @jwt_or_session_required
-@roles_required("Admin", "Manager", "Sales Executive", "Inventory Staff")
+@roles_required("Admin", "Manager", "Cashier", "Sales Executive", "Inventory Staff")
 def get_inventory():
     user = get_current_user()
 
     try:
-        if user["role"] == "Admin":
+        if user["role"] in ["Admin", "Inventory Staff"]:
             sql = """
                 SELECT 
                     p.product_id,
@@ -28,6 +28,7 @@ def get_inventory():
                     a.quantity,
                     b.brand_name,
                     c.category_name,
+                    a.branch_id,
                     br.branch_name
                 FROM accomodates a
                 JOIN products p ON a.product_id = p.product_id
@@ -46,6 +47,7 @@ def get_inventory():
                     a.quantity,
                     b.brand_name,
                     c.category_name,
+                    a.branch_id,
                     NULL AS branch_name
                 FROM accomodates a
                 JOIN products p ON a.product_id = p.product_id

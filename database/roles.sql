@@ -7,26 +7,26 @@ CREATE ROLE support_staff_role;
 
 GRANT SELECT ON users
 TO manager_role, sales_exec_role, inventory_staff_role, cashier_role, support_staff_role;
-
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO admin_role;
 GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO admin_role;
-
 GRANT SELECT, INSERT, UPDATE, DELETE
 ON products, orders, accomodates, customers
 TO manager_role;
-
 GRANT SELECT ON products, customers, orders TO sales_exec_role;
 GRANT INSERT ON orders, customers TO sales_exec_role;
 GRANT UPDATE ON orders TO sales_exec_role;
-
 GRANT SELECT ON products, accomodates TO inventory_staff_role;
 GRANT INSERT, UPDATE ON accomodates, stock_movements TO inventory_staff_role;
-
 GRANT SELECT ON products, customers TO cashier_role;
 GRANT INSERT ON orders, payments TO cashier_role;
-
 GRANT SELECT ON ALL TABLES IN SCHEMA public TO support_staff_role;
-
+GRANT SELECT ON payments TO manager_role;
+GRANT SELECT ON purchase_orders TO manager_role;
+GRANT SELECT ON purchase_items TO manager_role;
+GRANT SELECT ON brands TO manager_role;
+GRANT SELECT ON categories TO manager_role;
+GRANT SELECT ON purchase_payments TO manager_role;
+GRANT SELECT ON suppliers TO manager_role;
 GRANT SELECT ON return_orders TO manager_role;
 GRANT SELECT ON return_items TO manager_role;
 GRANT SELECT ON orders TO manager_role;
@@ -35,6 +35,22 @@ GRANT SELECT ON return_orders TO cashier_role;
 GRANT SELECT ON return_items TO cashier_role;
 GRANT SELECT ON orders TO cashier_role;
 GRANT SELECT ON customers TO cashier_role;
+GRANT SELECT ON payments TO cashier_role;
+GRANT SELECT ON categories TO cashier_role
+grant insert, update on orders to cashier_role
+grant select, insert, update on order_items to cashier_role
+grant update on accomodates to cashier_role
+grant select, insert, update on customers to cashier_role
+grant select,insert on return_orders to cashier_role
+grant select,insert on return_items to cashier_role
+grant select on brands, categories, order_items,accomodates to sales_exec_role
+grant select on table brands, purchase_payments, categories to inventory_staff_role
+grant insert on return_orders, return_items to support_staff_role
+grant select,insert,update on accomodates to support_staff_role
+grant select on return_orders to sales_exec_role
+grant select, insert, update, DELETE on purchase_orders to inventory_staff_role
+grant select, insert on purchase_items to inventory_staff_role
+grant select, insert on purchase_payments to inventory_staff_role
 
 ALTER TABLE orders ENABLE ROW LEVEL SECURITY;
 ALTER TABLE accomodates ENABLE ROW LEVEL SECURITY;

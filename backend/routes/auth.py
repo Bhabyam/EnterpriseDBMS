@@ -54,7 +54,6 @@ def login():
     if not password_correct:
         return unauthorized("Invalid username or password")
 
-    # Parse device info from User-Agent
     raw_ua    = request.headers.get("User-Agent", "")
     parsed_ua = parse_ua(raw_ua)
     device_info = (
@@ -63,7 +62,6 @@ def login():
         f"({'Mobile' if parsed_ua.is_mobile else 'Tablet' if parsed_ua.is_tablet else 'Desktop'})"
     )[:255]
 
-    # Insert session using postgres superuser
     session_id = None
     try:
         row = query(

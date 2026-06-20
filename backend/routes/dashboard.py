@@ -14,7 +14,42 @@ def get_grouping(period, col):
         return f"DATE_TRUNC('year', {col})"
     return f"DATE_TRUNC('month', {col})"
 
-# ✅ 1. SUMMARY
+#✅ 1. SUMMARY
+@dashboard_bp.route("/support_summary", methods=["GET"])
+def get_dashboard_support_summary():
+    branch_id = request.args.get("branch_id") or user.get("branch_id")
+
+    try:
+        # 1. Count Total Return Orders
+        count_sql = """
+            SELECT COUNT(ro.return_id)::INT as total 
+            FROM return_orders ro
+            JOIN orders o ON ro.order_id = o.order_id
+            WHERE o.branch_id = %s
+        """
+        total_returns = query(count_sql, (branch_id,), fetchone=True)["total"]
+
+        # 2. Sum up Items and Refund Amount from return_items
+        metrics_sql = """
+            SELECT 
+                COALESCE(SUM(ri.quantity), 0)::INT AS total_items,
+                COALESCE(SUM(ri.refund_amount), 0)::FLOAT AS total_refund
+            FROM return_items ri
+            JOIN return_orders ro ON ri.return_id = ro.return_id
+            JOIN orders o ON ro.order_id = o.order_id
+            WHERE o.branch_id = %s
+        """
+        metrics = query(metrics_sql, (branch_id,), fetchone=True)
+
+        return success({
+            "total_returns": total_returns or 0,
+            "total_items": metrics["total_items"] or 0,
+            "total_refund": metrics["total_refund"] or 0
+        })
+
+    except Exception as e:
+        print("SUMMARY ERROR:", e)
+        return error("Internal Server Error", 500)
 @dashboard_bp.route("/summary", methods=["GET", "OPTIONS"])
 def get_dashboard_summary():
 
@@ -300,7 +335,7 @@ def get_top_suppliers():
                 WHERE po.branch_id = %s
                 GROUP BY s.first_name, s.last_name
                 ORDER BY count DESC
-                LIMIT 5
+                LIMIT 3
                 """,
                 (branch_id,),
                 fetchall=True
@@ -313,7 +348,7 @@ def get_top_suppliers():
                 JOIN suppliers s ON po.supplier_id = s.supplier_id
                 GROUP BY s.first_name, s.last_name
                 ORDER BY count DESC
-                LIMIT 5
+                LIMIT 3
                 """,
                 fetchall=True
             )
@@ -446,3 +481,45 @@ def get_dashboard_branches():
     except Exception as e:
         return error(str(e))
     
+# Add or update this at the top of your file
+def get_grouping(period, col):
+    if period == "day":
+        return f"TO_CHAR({col}, 'HH24:00')"
+    elif period == "week":
+        return f"TO_CHAR({col}, 'Dy DD')"
+    elif period == "year":
+        return f"TO_CHAR({col}, 'Mon YYYY')"
+    return f"TO_CHAR({col}, 'DD Mon')" # Default for month
+
+# ✅ ADD THIS ROUTE to dashboard.py
+@dashboard_bp.route("/returns_trend", methods=["GET"])
+def get_returns_trend():
+    try:
+        branch_id = request.args.get("branch_id")
+        period = request.args.get("period", "week")
+        
+        # This helper should already be in your file from our previous session
+        group = get_grouping(period, "ro.return_date")
+
+        query_sql = f"""
+            SELECT 
+                {group} AS date, 
+                COUNT(ro.return_id)::INT AS value
+            FROM return_orders ro
+            JOIN orders o ON ro.order_id = o.order_id
+            WHERE 1=1
+            {"AND o.branch_id = %s" if branch_id else ""}
+            GROUP BY date, ro.return_date
+            ORDER BY ro.return_date ASC
+        """
+
+        rows = query(
+            query_sql, 
+            (branch_id,) if branch_id else None, 
+            fetchall=True
+        )
+        
+        return success([dict(r) for r in rows])
+    except Exception as e:
+        print("RETURNS TREND ERROR:", e)
+        return error(str(e))

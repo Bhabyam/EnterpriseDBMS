@@ -18,11 +18,28 @@ from routes.inventory import inventory_bp
 from routes.purchase_orders import purchase_orders_bp
 from routes.returns import returns_bp
 from routes.place_order import place_order_bp
+from routes.customers import customers_bp
+from routes.process_return import process_return_bp
+from routes.add_payment import add_payment_bp
+from routes.sales_insights import sales_insights_bp
+from routes.add_purchase_payment import add_purchase_payment_bp
+from routes.create_purchase_order import create_po_bp
+from routes.receive_goods import receive_goods_bp
+from routes.stock_movement import stock_movement_bp
 
 app = Flask(__name__)
-
-# ✅ Load ALL config from Config class
 app.config.from_object(Config)
+
+import datetime
+from flask.json.provider import DefaultJSONProvider
+
+class CustomJSONProvider(DefaultJSONProvider):
+    def default(self, obj):
+        if isinstance(obj, (datetime.date, datetime.datetime)):
+            return obj.isoformat()
+        return super().default(obj)
+
+app.json = CustomJSONProvider(app)
 
 # 🌐 CORS
 CORS(
@@ -66,6 +83,14 @@ app.register_blueprint(inventory_bp)
 app.register_blueprint(purchase_orders_bp)
 app.register_blueprint(returns_bp)
 app.register_blueprint(place_order_bp)
+app.register_blueprint(customers_bp)
+app.register_blueprint(process_return_bp)
+app.register_blueprint(add_payment_bp)
+app.register_blueprint(sales_insights_bp)
+app.register_blueprint(add_purchase_payment_bp)
+app.register_blueprint(create_po_bp)
+app.register_blueprint(receive_goods_bp)
+app.register_blueprint(stock_movement_bp)
 
 @app.route("/")
 def home():

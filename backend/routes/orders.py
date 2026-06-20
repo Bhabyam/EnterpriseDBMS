@@ -15,7 +15,7 @@ def c(user):
 # ✅ GET ALL ORDERS
 @orders_bp.route("/", methods=["GET", "OPTIONS"])
 @jwt_or_session_required
-@roles_required("Admin", "Manager", "Sales Executive", "Cashier")
+@roles_required("Admin", "Manager", "Sales Executive", "Cashier", "Support Staff")
 def get_orders():
     if request.method == "OPTIONS":
         return success([])
@@ -85,7 +85,7 @@ def get_orders():
 # ✅ ORDER DETAILS
 @orders_bp.route("/<int:order_id>", methods=["GET", "OPTIONS"])
 @jwt_or_session_required
-@roles_required("Admin", "Manager", "Sales Executive", "Cashier")
+@roles_required("Admin", "Manager", "Sales Executive", "Cashier", "Support Staff")
 def get_order_details(order_id):
     if request.method == "OPTIONS":
         return success({})
@@ -112,6 +112,13 @@ def get_order_details(order_id):
             """
             SELECT 
                 o.invoice_number,
+                o.order_date AS date,
+                c.first_name || ' ' || c.last_name AS customer_name,
+                c.email AS customer_email,
+                c.phone AS customer_phone,
+                c.address AS customer_address,
+                c.customer_type,
+                b.branch_name,
                 o.total_amount,
                 COALESCE(SUM(p.amount),0) AS paid,
                 o.total_amount - COALESCE(SUM(p.amount),0) AS remaining,
@@ -122,9 +129,11 @@ def get_order_details(order_id):
                     WHERE r.order_id = o.order_id
                 ) AS is_returned
             FROM orders o
+            JOIN customers c ON o.customer_id = c.customer_id
+            JOIN branches b ON o.branch_id = b.branch_id
             LEFT JOIN payments p ON o.order_id = p.order_id
             WHERE o.order_id = %s
-            GROUP BY o.order_id, o.invoice_number, o.total_amount, o.status
+            GROUP BY o.order_id, o.invoice_number, o.order_date, c.first_name, c.last_name, c.email, c.phone, c.address, c.customer_type, b.branch_name, o.total_amount, o.status
             """,
             (order_id,),
             fetchone=True

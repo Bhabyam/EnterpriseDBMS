@@ -24,6 +24,13 @@ import PurchaseOrders from "../pages/PurchaseOrdersHistory";
 import PurchaseOrderDetails from "../pages/PurchaseOrderDetails";
 import ReturnHistory from "../pages/ReturnHistory";
 import PlaceOrder from "../pages/PlaceOrder";
+import ProcessReturn from "../pages/ProcessReturn";
+import AddPayment from "../pages/AddPayment";
+import SalesInsights from "../pages/SalesInsights";
+import AddPurchasePayment from "../pages/AddPurchasePayment";
+import PlacePurchaseOrder from "../pages/PlacePurchaseOrder";
+import ReceiveGoods from "../pages/ReceiveGoods";
+import TransferStock from "../pages/TransferStock";
 
 export default function AppRoutes() {
   return (
@@ -65,7 +72,8 @@ export default function AppRoutes() {
                 "Admin",
                 "Manager",
                 "Cashier",
-                "Inventory Staff"
+                "Inventory Staff",
+                "Support Staff"
               ]}
             />
           }
@@ -77,12 +85,36 @@ export default function AppRoutes() {
         <Route
           element={
             <ProtectedRoute
+              allowedRoles={[
+                "Admin",
+                "Manager",
+                "Inventory Staff",
+                "Sales Executive"
+              ]}
+            />
+          }
+        >
+          <Route path="/inventory" element={<Inventory />} />
+        </Route>
+
+        <Route
+          element={
+            <ProtectedRoute
+              allowedRoles={["Admin", "Manager", "Cashier", "Support Staff"]}
+            />
+          }
+        >
+          <Route path="/returns" element={<ReturnHistory />} />
+        </Route>
+
+        <Route
+          element={
+            <ProtectedRoute
               allowedRoles={["Admin", "Manager", "Cashier"]}
             />
           }
         >
           <Route path="/payments" element={<PaymentPage />} />
-          <Route path="/returns" element={<ReturnHistory />} />
         </Route>
 
         <Route
@@ -95,7 +127,28 @@ export default function AppRoutes() {
           <Route path="/purchase_orders" element={<PurchaseOrders />} />
           <Route path="/purchase_orders/:id" element={<PurchaseOrderDetails />} />
           <Route path="/supplier_payments" element={<SupplierPayments />} />
-          <Route path="/inventory" element={<Inventory />} />
+          <Route path="/receive_goods" element={<ReceiveGoods />} />
+          <Route path="/transfer_stock" element={<TransferStock />} />
+        </Route>
+
+        <Route
+          element={
+            <ProtectedRoute
+              allowedRoles={["Cashier", "Support Staff", "Sales Executive"]}
+            />
+          }
+        >
+          <Route path="/products" element={<Products />} />
+        </Route>
+
+        <Route
+          element={
+            <ProtectedRoute
+              allowedRoles={["Cashier", "Support Staff"]}
+            />
+          }
+        >
+          <Route path="/process_return" element={<ProcessReturn />} />
         </Route>
 
         <Route
@@ -108,8 +161,23 @@ export default function AppRoutes() {
         <Route
           element={<ProtectedRoute allowedRoles={["Cashier"]} />}
         >
-          <Route path="/products" element={<Products />} />
           <Route path="/place_order" element={<PlaceOrder />} />
+          <Route path="/inventory" element={<Inventory />} />
+          <Route path="/process_return" element={<ProcessReturn />} />
+          <Route path="/add_payment" element={<AddPayment />} />
+        </Route>
+
+        <Route
+          element={<ProtectedRoute allowedRoles={["Sales Executive"]} />}
+        >
+          <Route path="/sales_insights" element={<SalesInsights />} />
+        </Route>
+
+        <Route
+          element={<ProtectedRoute allowedRoles={["Inventory Staff"]} />}
+        >
+          <Route path="/create_purchase_order" element={<PlacePurchaseOrder />} />
+          <Route path="/add_purchase_payment" element={<AddPurchasePayment />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/login" />} />

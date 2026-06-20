@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+.dark {
+  color-scheme: dark;
+}
+
+input, select, textarea, option {
+  @apply text-gray-900 dark:text-white dark:bg-slate-800;
+}
+
+/* Ensure placeholder text is visible in both modes */
+input::placeholder, textarea::placeholder {
+  @apply text-gray-400 dark:text-gray-500;
+}

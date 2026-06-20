@@ -124,31 +124,24 @@ def get_purchase_order_details(po_id):
             """
             SELECT 
                 po.po_id,
-
-                (SELECT COALESCE(SUM(sub_total),0)
-                 FROM purchase_items 
-                 WHERE po_id = po.po_id) AS total_amount,
-
-                (SELECT COALESCE(SUM(amount),0)
-                 FROM purchase_payments 
-                 WHERE po_id = po.po_id) AS paid,
-
-                (SELECT COALESCE(SUM(sub_total),0)
-                 FROM purchase_items 
-                 WHERE po_id = po.po_id)
-                -
-                (SELECT COALESCE(SUM(amount),0)
-                 FROM purchase_payments 
-                 WHERE po_id = po.po_id)
-                AS remaining,
-
+                po.order_date,
+                s.first_name || ' ' || s.last_name AS supplier_name,
+                s.email AS supplier_email,
+                s.phone AS supplier_phone,
+                s.address AS supplier_address,
+                b.branch_name,
+                (SELECT COALESCE(SUM(sub_total),0) FROM purchase_items WHERE po_id = po.po_id) AS total_amount,
+                (SELECT COALESCE(SUM(amount),0) FROM purchase_payments WHERE po_id = po.po_id) AS paid,
+                (SELECT COALESCE(SUM(sub_total),0) FROM purchase_items WHERE po_id = po.po_id) -
+                (SELECT COALESCE(SUM(amount),0) FROM purchase_payments WHERE po_id = po.po_id) AS remaining,
                 po.status
-
             FROM purchase_orders po
+            JOIN suppliers s ON po.supplier_id = s.supplier_id
+            JOIN branches b ON po.branch_id = b.branch_id
             WHERE po.po_id = %s
             """,
             (po_id,),
-            fetchone=True   # 🔥 THIS IS THE FIX
+            fetchone=True
         )
 
         return success({
